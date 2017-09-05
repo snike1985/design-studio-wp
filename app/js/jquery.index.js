@@ -352,6 +352,42 @@
                     }
                 } );
 
+                $('.blog__title').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .5;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.blog__list-item').each( function(i) {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .05;
+
+                    if ( i % 2 == 0 ) {
+                        curKoef = -curKoef;
+                    }
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
             },
             _siteScroll = function( event ) {
                 var scrollTime = .5,
