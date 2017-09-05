@@ -14,6 +14,7 @@ let del             = require('del');
 
 //let rootPathName = process.cwd().split('/');
 
+
 let distPath = `dist/wp-content/themes/design-studio/assets`;
 
 
