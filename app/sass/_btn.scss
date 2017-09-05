@@ -1,0 +1,118 @@
+/*---------- btn ----------*/
+.btn {
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  min-width: 185px;
+  padding: 6px 12px 4px;
+  border: 2px solid #0200FF;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #0200FF;
+  transform: translatez(0);
+  cursor: pointer;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .7s cubic-bezier(.19,1,.22,1);
+    backface-visibility: hidden;
+    content: '';
+  }
+
+  span {
+    position: relative;
+    display: block;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 20px;
+    @include subtitle-bold();
+    transition: color .7s cubic-bezier(.19,1,.22,1);
+  }
+
+  &.btn_transparent {
+    background-color: transparent;
+
+    &:before {
+      background-color: #0200FF;
+    }
+
+    span {
+      color: #0200FF;
+    }
+
+    &:hover {
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+
+  &.btn_2 {
+    background-color: transparent;
+    border-color: #fff;
+    border-width: 1px;
+    padding: 10px 27px 8px;
+
+    &:before {
+      background-color: #fff;
+    }
+
+    span {
+      color: #fff;
+    }
+
+    &:hover {
+
+
+    }
+  }
+
+  &:hover {
+
+    &:before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    span {
+      color: #0200FF;
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .btn {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .btn {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .btn {
+
+  }
+}
+@media (min-width: $desktop) {
+  .btn {
+    padding: 10px 23px 8px;
+
+    span {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+}
+/*---------- /btn ---------*/

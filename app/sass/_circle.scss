@@ -1,0 +1,38 @@
+/*---------- circle ----------*/
+.circle {
+  position: absolute;
+  height: 519px;
+  width: 519px;
+  z-index: 1;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 99px solid #E2E3E4;
+
+  &.circle_min {
+    width: 117px;
+    height: 117px;
+    border: 20px solid #E2E3E4;
+  }
+}
+@media (min-width: $phone-landscape) {
+  .circle {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .circle {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .circle {
+
+  }
+}
+@media (min-width: $desktop) {
+  .circle {
+
+  }
+}
+/*---------- /circle ---------*/
+
