@@ -12,9 +12,9 @@ let autoprefixer    = require('gulp-autoprefixer');
 let browserSync     = require('browser-sync').create();
 let del             = require('del');
 
-let rootPathName = process.cwd().split('/');
+//let rootPathName = process.cwd().split('/');
 
-let distPath = `dist/wp-content/themes/${ rootPathName[ rootPathName.length - 1 ] }/assets`;
+let distPath = `dist/wp-content/themes/design-studio/assets`;
 
 
 let paths = {
