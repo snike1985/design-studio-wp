@@ -9,7 +9,7 @@
 
     <title>Title</title>
 
-    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.css">
     <link rel="stylesheet" href="css/works-page.css">
 
 </head>
@@ -227,6 +227,10 @@
             <!-- works -->
             <section class="works works_isotope">
 
+                <!-- works__title -->
+                <strong class="works__title">Work</strong>
+                <!-- /works__title -->
+
                 <!-- works__filter -->
                 <div class="works__filter">
                     <div class="works__filter-item" data-filter="*">all</div>
@@ -237,10 +241,6 @@
                     <div class="works__filter-item" data-filter=".android">android</div>
                 </div>
                 <!-- /works__filter -->
-
-                <!-- works__title -->
-                <strong class="works__title">Work</strong>
-                <!-- /works__title -->
 
                 <!-- works__list -->
                 <div class="works__list">
@@ -688,11 +688,15 @@
         <!-- /site__content -->
 
         <!-- circle -->
-        <span class="circle" style="top: 50vh; left: 65vw"></span>
+        <span class="circle circle_middle circle_mobile" style="top: 95vh; left: 41vw"></span>
         <!-- /circle -->
 
         <!-- circle -->
-        <span class="circle circle_min" style="top: 150vh; left: 45vw"></span>
+        <span class="circle circle_desktop" style="top: 50vh; left: 65vw"></span>
+        <!-- /circle -->
+
+        <!-- circle -->
+        <span class="circle circle_desktop circle_min" style="top: 150vh; left: 45vw"></span>
         <!-- /circle -->
 
     </div>
@@ -718,6 +722,7 @@
 
 
     <script src="js/vendors/jquery-2.2.1.min.js"></script>
+    <script src="js/vendors/perfect-scrollbar.jquery.min.js"></script>
     <script src="js/vendors/isotope.js"></script>
     <script src="js/vendors/ScrollToPlugin.min.js"></script>
     <script src="js/vendors/TweenMax.min.js"></script>

@@ -3,6 +3,10 @@
 
     $(function(){
 
+        $('.blog').each( function() {
+            new Blog( $(this) );
+        } );
+
         $('.contact-us').each( function() {
             new ContactUs( $(this) );
         } );
@@ -40,6 +44,42 @@
         } );
 
     });
+
+    var Blog = function(obj) {
+
+        //private properties
+        var _obj = obj,
+            _menu = _obj.find( '.blog__menu' ),
+            _submit = _obj.find( 'input[type=submit]' ),
+            _btn = document.createElement('div');
+
+        //private methods
+        var _addEvents = function() {
+
+                $( window ).on({
+                    'resize': function() {
+                        _menu.perfectScrollbar('update');
+                    }
+                });
+
+            },
+            _initScroll = function() {
+                _menu.perfectScrollbar();
+            },
+            _init = function() {
+                _btn.className = 'btn';
+                _btn.innerHTML = '<span>Send</span>';
+                _submit.after(_btn);
+                _addEvents();
+                _initScroll();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
 
     var ContactUs = function(obj) {
 
@@ -107,6 +147,7 @@
         var _obj = obj,
             _btnOpen = $( '.request-btn' ),
             _btnClose = _obj.find( '.request__close' ),
+            _scrollWrap = _obj.find('.request__wrap'),
             _range = _obj.find('input[type=range]'),
             _curValue = _obj.find('.request__range'),
             _radioElems = _obj.find('.wpcf7-list-item');
@@ -125,6 +166,13 @@
                     'click': function() {
 
                         _obj.removeClass('open');
+                    }
+                });
+
+                $( window ).on({
+                    'resize': function() {
+
+                        _scrollWrap.perfectScrollbar('update');
                     }
                 });
 
@@ -156,11 +204,15 @@
             _changeValue = function (val) {
                 _curValue.text(val.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,'));
             },
+            _initScroll = function() {
+                _scrollWrap.perfectScrollbar();
+            },
             _init = function() {
                 _addEvents();
                 _range.after(_curValue);
                 _changeValue(((_range.attr('max') - _range.attr('min'))/2).toString());
                 _createNiceRadio();
+                _initScroll();
             };
 
         //public properties
@@ -232,43 +284,43 @@
             _move = function( scrollTop ){
                 var winHeight = $(window).height();
 
-                $('.works__title').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .5;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
-                $('.works__item').each( function(i) {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .05;
-
-                    if (!curElem.parents('.works_isotope')) {
-                        if ( i % 2 == 0 ) {
-                            curKoef = -curKoef;
-                        }
-
-                        if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                            if ( curTop < winHeight ) {
-                                _paralax( curElem, 0, scrollTop, curKoef);
-                            } else {
-                                _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                            }
-                        }
-                    }
-                } );
+                // $('.works__title').each( function() {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .5;
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //         }
+                //     }
+                // } );
+                //
+                // $('.works__item').each( function(i) {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .05;
+                //
+                //     if (!curElem.parents('.works_isotope')) {
+                //         if ( i % 2 == 0 ) {
+                //             curKoef = -curKoef;
+                //         }
+                //
+                //         if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //             if ( curTop < winHeight ) {
+                //                 _paralax( curElem, 0, scrollTop, curKoef);
+                //             } else {
+                //                 _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //             }
+                //         }
+                //     }
+                // } );
 
                 $('.circle').each( function() {
                     var curElem = $(this),
@@ -351,6 +403,42 @@
                         }
                     }
                 } );
+
+                // $('.blog__title').each( function() {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .5;
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //         }
+                //     }
+                // } );
+                //
+                // $('.blog__list-item').each( function(i) {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .05;
+                //
+                //     if ( i % 2 == 0 ) {
+                //         curKoef = -curKoef;
+                //     }
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //         }
+                //     }
+                // } );
 
             },
             _siteScroll = function( event ) {
@@ -611,6 +699,9 @@
                     'load': function () {
                         _initFilter();
                         _filterItems.eq(0).trigger('click');
+                    },
+                    'resize': function () {
+                        _filter.perfectScrollbar('update');
                     }
                 });
 
@@ -629,7 +720,6 @@
                             _items.removeClass('odd');
                             _items.removeClass('even');
 
-                            console.log(filterData);
                             var count = 0;
                             _items.each(function () {
                                 var curElem = $(this);
@@ -661,8 +751,12 @@
                     }
                 });
             },
+            _initScroll = function() {
+                _filter.perfectScrollbar();
+            },
             _init = function() {
                 _addEvents();
+                _initScroll();
             };
 
         //public properties

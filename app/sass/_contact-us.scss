@@ -5,46 +5,51 @@
 
   &__title {
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: -48px;
     color: #3F4551;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 23px;
+    line-height: 27px;
+    letter-spacing: .1px;
     @include subtitle-bold();
 
     span {
       display: block;
+      position: relative;
+      top: -31px;
       color: #0200FF;
-      font-size: 85px;
-      line-height: 85px;
+      font-size: 122px;
+      line-height: 193px;
       text-transform: uppercase;
       @include title();
     }
   }
 
   p {
+    padding: 0 10px;
     color: #3F4551;
-    font-size: 12px;
-    line-height: 26px;
+    font-size: 15px;
+    line-height: 25px;
     text-align: center;
   }
 
   &__form {
     max-width: 404px;
     margin: 0 auto;
-    padding: 35px 0;
+    padding: 53px 12px;
 
     input[type=text],
     input[type=email] {
-      height: 27px;
+      height: 36px;
       width: 100%;
-      margin-bottom: 15px;
+      margin-bottom: 21px;
       border-color: #979797;
       border-style: solid;
       border-width: 0 0 2px 0;
       color: #3F4551;
       background: transparent;
-      font-size: 12px;
-      line-height: 16px;
+      font-size: 16px;
+      line-height: 25px;
+      letter-spacing: 1px;
       text-align: center;
       box-sizing: border-box;
       border-radius: 0;
@@ -69,7 +74,8 @@
     }
 
     .btn {
-      margin-top: 15px;
+      width: 100%;
+      margin-top: 24px;
     }
   }
 }
@@ -93,16 +99,20 @@
     padding: 0;
 
     &__title {
+      margin-bottom: 12px;
       font-size: 24px;
       line-height: 27px;
+      letter-spacing: normal;
 
       span {
+        top: 0;
         font-size: 172px;
         line-height: 176px;
       }
     }
 
     p {
+      padding: 0;
       font-size: 16px;
       line-height: 30px;
     }
@@ -112,12 +122,14 @@
 
       input[type=text],
       input[type=email] {
+        height: 27px;
         margin-bottom: 27px;
         font-size: 20px;
         line-height: 25px;
       }
 
       .btn {
+        width: auto;
         margin-top: 29px;
       }
     }
