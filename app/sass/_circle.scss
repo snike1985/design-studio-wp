@@ -9,10 +9,18 @@
   border: 99px solid #E2E3E4;
 
   &.circle_min {
-    width: 117px;
-    height: 117px;
-    border: 20px solid #E2E3E4;
+    width: 40px;
+    height: 40px;
+    border: 10px solid #E2E3E4;
   }
+
+  &.circle_middle {
+    width: 318px;
+    height: 318px;
+    border: 59px solid #E2E3E4;
+  }
+
+  &.circle_desktop { display: none }
 }
 @media (min-width: $phone-landscape) {
   .circle {
@@ -32,6 +40,14 @@
 @media (min-width: $desktop) {
   .circle {
 
+    &.circle_min {
+      width: 117px;
+      height: 117px;
+      border: 20px solid #E2E3E4;
+    }
+
+    &.circle_desktop { display: block }
+    &.circle_mobile { display: none }
   }
 }
 /*---------- /circle ---------*/

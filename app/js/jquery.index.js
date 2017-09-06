@@ -284,43 +284,43 @@
             _move = function( scrollTop ){
                 var winHeight = $(window).height();
 
-                $('.works__title').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .5;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
-                $('.works__item').each( function(i) {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .05;
-
-                    if (!curElem.parents('.works_isotope')) {
-                        if ( i % 2 == 0 ) {
-                            curKoef = -curKoef;
-                        }
-
-                        if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                            if ( curTop < winHeight ) {
-                                _paralax( curElem, 0, scrollTop, curKoef);
-                            } else {
-                                _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                            }
-                        }
-                    }
-                } );
+                // $('.works__title').each( function() {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .5;
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //         }
+                //     }
+                // } );
+                //
+                // $('.works__item').each( function(i) {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .05;
+                //
+                //     if (!curElem.parents('.works_isotope')) {
+                //         if ( i % 2 == 0 ) {
+                //             curKoef = -curKoef;
+                //         }
+                //
+                //         if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //             if ( curTop < winHeight ) {
+                //                 _paralax( curElem, 0, scrollTop, curKoef);
+                //             } else {
+                //                 _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //             }
+                //         }
+                //     }
+                // } );
 
                 $('.circle').each( function() {
                     var curElem = $(this),
@@ -699,6 +699,9 @@
                     'load': function () {
                         _initFilter();
                         _filterItems.eq(0).trigger('click');
+                    },
+                    'resize': function () {
+                        _filter.perfectScrollbar('update');
                     }
                 });
 
@@ -717,7 +720,6 @@
                             _items.removeClass('odd');
                             _items.removeClass('even');
 
-                            console.log(filterData);
                             var count = 0;
                             _items.each(function () {
                                 var curElem = $(this);
@@ -749,8 +751,12 @@
                     }
                 });
             },
+            _initScroll = function() {
+                _filter.perfectScrollbar();
+            },
             _init = function() {
                 _addEvents();
+                _initScroll();
             };
 
         //public properties
