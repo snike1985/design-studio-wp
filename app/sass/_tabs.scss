@@ -6,9 +6,10 @@
   &__controls {
     display: inline-flex;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     background-color: #FFFFFF;
     border-radius: 100px;
+    padding: 0 2px;
 
     &:before {
       position: absolute;

@@ -322,87 +322,87 @@
                 //     }
                 // } );
 
-                $('.circle').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .3;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                            _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                            _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
-                        }
-                    }
-                } );
-
-                $('.hero__gadgets').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .2;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
-                $('.hero__list').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = -.1;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
-                $('.hero__layout').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = -.07;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
-                $('.doing__head-list').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .04;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
+                // $('.circle').each( function() {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .3;
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //             _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //             _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                //         }
+                //     }
+                // } );
+                //
+                // $('.hero__gadgets').each( function() {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .2;
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //         }
+                //     }
+                // } );
+                //
+                // $('.hero__list').each( function() {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = -.1;
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //         }
+                //     }
+                // } );
+                //
+                // $('.hero__layout').each( function() {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = -.07;
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //         }
+                //     }
+                // } );
+                //
+                // $('.doing__head-list').each( function() {
+                //     var curElem = $(this),
+                //         curTop = curElem.offset().top,
+                //         curHeight = curElem.height(),
+                //         curKoef = .04;
+                //
+                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+                //
+                //         if ( curTop < winHeight ) {
+                //             _paralax( curElem, 0, scrollTop, curKoef);
+                //         } else {
+                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                //         }
+                //     }
+                // } );
 
                 // $('.blog__title').each( function() {
                 //     var curElem = $(this),
