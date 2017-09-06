@@ -45,18 +45,7 @@
   }
 
   &__create-by {
-    position: absolute;
-    top: 70vh;
-    left: 10px;
-    z-index: 1;
-    transform-origin: left;
-    transform: rotate(270deg);
-    color: #3F4551;
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    @include subtitle-medium();
+    display: none;
   }
 }
 @media (min-width: $phone-landscape) {
@@ -90,8 +79,19 @@
     }
 
     &__create-by {
-      top: 97.5vh;
+      display: block;
+      position: absolute;
+      top: 780px;
       left: 57px;
+      z-index: 1;
+      transform-origin: left;
+      transform: rotate(270deg);
+      color: #3F4551;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      @include subtitle-medium();
     }
   }
 }
