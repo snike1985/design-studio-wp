@@ -190,7 +190,7 @@
       line-height: 25px;
       box-sizing: border-box;
       border-radius: 0;
-      @include main-font();
+      @include main-font-bold();
 
       &::-webkit-input-placeholder {
         color: #AAABAF;

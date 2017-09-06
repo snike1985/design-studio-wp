@@ -228,25 +228,33 @@
         var _self = this,
             _obj = obj,
             _window = $( window ),
-            _canUseSmoothScroll = true;
+            _canUseSmoothScroll = true,
+            _canMove = true;
 
         //private methods
         var _addEvents = function() {
 
                 _window.on( {
                     'scroll': function() {
-
-                        var scrollTop = $(window).scrollTop();
-
-                        _move( scrollTop );
-
+                        if ( _canMove ) {
+                            var scrollTop = $(window).scrollTop();
+                            _move( scrollTop );
+                        } else {
+                            _move( 0 );
+                        }
                     },
                     'load': function() {
+                        _changeCanMove();
 
-                        var scrollTop = $(window).scrollTop();
-
-                        _move( scrollTop );
-
+                        if ( _canMove ) {
+                            var scrollTop = $(window).scrollTop();
+                            _move( scrollTop );
+                        } else {
+                            _move( 0 );
+                        }
+                    },
+                    'resize': function() {
+                        _changeCanMove();
                     },
                     'mousewheel': function( event ) {
                         if ( _canUseSmoothScroll ) {
@@ -267,6 +275,15 @@
                 } );
 
             },
+            _changeCanMove = function() {
+                var siteWidth = $('.site').outerWidth();
+
+                if ( siteWidth < 1200 ) {
+                    _canMove = false;
+                } else {
+                    _canMove = true;
+                }
+            },
             _paralax = function( elem, x, y, koef ) {
                 var translate = 'translate3d(' + Math.round(x*koef) + 'px, ' + Math.round(y*koef) + 'px, 0px )';
 
@@ -284,161 +301,161 @@
             _move = function( scrollTop ){
                 var winHeight = $(window).height();
 
-                // $('.works__title').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .5;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
-                //
-                // $('.works__item').each( function(i) {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .05;
-                //
-                //     if (!curElem.parents('.works_isotope')) {
-                //         if ( i % 2 == 0 ) {
-                //             curKoef = -curKoef;
-                //         }
-                //
-                //         if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //             if ( curTop < winHeight ) {
-                //                 _paralax( curElem, 0, scrollTop, curKoef);
-                //             } else {
-                //                 _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //             }
-                //         }
-                //     }
-                // } );
+                $('.works__title').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .5;
 
-                // $('.circle').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .3;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //             _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //             _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
-                //         }
-                //     }
-                // } );
-                //
-                // $('.hero__gadgets').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .2;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
-                //
-                // $('.hero__list').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = -.1;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
-                //
-                // $('.hero__layout').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = -.07;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
-                //
-                // $('.doing__head-list').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .04;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
 
-                // $('.blog__title').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .5;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
-                //
-                // $('.blog__list-item').each( function(i) {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .05;
-                //
-                //     if ( i % 2 == 0 ) {
-                //         curKoef = -curKoef;
-                //     }
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.works__item').each( function(i) {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .05;
+
+                    if (!curElem.parents('.works_isotope').length) {
+                        if ( i % 2 == 0 ) {
+                            curKoef = -curKoef;
+                        }
+
+                        if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                            if ( curTop < winHeight ) {
+                                _paralax( curElem, 0, scrollTop, curKoef);
+                            } else {
+                                _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                            }
+                        }
+                    }
+                } );
+
+                $('.circle').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .3;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                            _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                            _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                        }
+                    }
+                } );
+
+                $('.hero__gadgets').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .2;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.hero__list').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = -.1;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.hero__layout').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = -.07;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.doing__head-list').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .04;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.blog__title').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .5;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.blog__list-item').each( function(i) {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .05;
+
+                    if ( i % 2 == 0 ) {
+                        curKoef = -curKoef;
+                    }
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
 
             },
             _siteScroll = function( event ) {

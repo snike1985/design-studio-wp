@@ -124,7 +124,6 @@
     z-index: 1;
     background-color: #fff;
     transform: translate(-15px, 0px);
-    transition: transform .3s linear;
 
     &:nth-child(even) {
       transform: translate(15px, 0)

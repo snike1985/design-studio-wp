@@ -49,11 +49,10 @@
       background: transparent;
       font-size: 16px;
       line-height: 25px;
-      letter-spacing: 1px;
       text-align: center;
       box-sizing: border-box;
       border-radius: 0;
-      @include subtitle-bold();
+      @include main-font-bold();
 
       &::-webkit-input-placeholder {
         color: #AAABAF;
