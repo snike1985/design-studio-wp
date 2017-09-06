@@ -156,6 +156,20 @@
             _changeValue = function (val) {
                 _curValue.text(val.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,'));
             },
+            _getScrollWidth = function (){
+                var scrollDiv = document.createElement( 'div'),
+                    scrollBarWidth;
+
+                scrollDiv.className = 'scrollbar-measure';
+
+                document.body.appendChild( scrollDiv );
+
+                scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+
+                document.body.removeChild(scrollDiv);
+
+                return scrollBarWidth;
+            },
             _init = function() {
                 _addEvents();
                 _range.after(_curValue);
