@@ -7,6 +7,10 @@
             new Blog( $(this) );
         } );
 
+        $('.case').each( function() {
+            new Case( $(this) );
+        } );
+
         $('.contact-us').each( function() {
             new ContactUs( $(this) );
         } );
@@ -70,6 +74,44 @@
                 _btn.className = 'btn';
                 _btn.innerHTML = '<span>Send</span>';
                 _submit.after(_btn);
+                _addEvents();
+                _initScroll();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
+    var Case = function(obj) {
+
+        //private properties
+        var _obj = obj;
+
+        //private methods
+        var _addEvents = function() {
+
+                $( window ).on({
+                    'resize': function() {
+
+                    }
+                });
+
+            },
+            _initScroll = function() {
+
+            },
+            _init = function() {
+                var swiper = new Swiper('.swiper-container', {
+                    nextButton: '.case__slider-next',
+                    prevButton: '.case__slider-prev',
+                    slidesPerView: 1,
+                    paginationClickable: true,
+                    spaceBetween: 0,
+                    loop: true
+                });
                 _addEvents();
                 _initScroll();
             };

@@ -1,0 +1,43 @@
+/*---------- labels ----------*/
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    margin: 5px 10px 5px 0;
+    padding: 3px 13px;
+    border-radius: 100px;
+    background-color: rgba(63,69,81,.2);
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 23px;
+    text-transform: uppercase;
+    @include subtitle-bold();
+  }
+}
+@media (min-width: $phone-landscape) {
+  .labels {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .labels {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .labels {
+
+  }
+}
+@media (min-width: $desktop) {
+  .labels {
+
+  }
+}
+/*---------- /labels ---------*/
+
