@@ -3,7 +3,7 @@
   position: relative;
 
   &__content {
-    padding: 30px 20px 30px 66px;
+    padding: 30px 30px 30px 59px;
     color: #3F4551;
     font-size: 15px;
     line-height: 30px;
@@ -32,14 +32,13 @@
 
   &__map {
     position: relative;
-    height: 67.66055vw;
-    min-height: 243px;
     top: -53px;
-    right: -34px;
+    right: -27px;
+    min-width: 412px;
 
     > img {
       display: block;
-      height: 100%;
+      width: 100%;
     }
 
     &-point {

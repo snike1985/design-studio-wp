@@ -32,6 +32,31 @@
           position: relative;
           margin-bottom: 18px;
           padding-left: 45px;
+          opacity: 0;
+          transition: opacity .3s ease-in-out .15s;
+
+          &:before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 14px;
+            width: 28.91px;
+            margin-top: -7px;
+            opacity: 0;
+            transform: translate(-100%,0);
+            transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+            background: url("../img/arrow.svg") no-repeat center left;
+            content: '';
+          }
+
+          &.is-show {
+            opacity: 1;
+
+            &:before {
+              opacity: 1;
+              transform: translate(0);
+            }
+          }
 
           span { display: block }
         }
@@ -122,7 +147,19 @@
         min-height: 522px;
       }
 
-      &-list { width: 50% }
+      &-list {
+        width: 50%;
+
+        ul {
+
+          li {
+            padding: 0;
+            opacity: 1;
+
+            &:before { display: none }
+          }
+        }
+      }
     }
 
     &__subtitle {

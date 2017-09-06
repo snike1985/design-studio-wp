@@ -14,6 +14,24 @@
     border: 10px solid #E2E3E4;
   }
 
+  &.circle_little {
+    width: 57px;
+    height: 57px;
+    border: 10px solid #E2E3E4;
+  }
+
+  &.circle_medium{
+    width: 117px;
+    height: 117px;
+    border: 20px solid #E2E3E4;
+  }
+
+  &.circle_semi {
+    width: 180px;
+    height: 180px;
+    border: 40px solid #E2E3E4;
+  }
+
   &.circle_middle {
     width: 318px;
     height: 318px;
