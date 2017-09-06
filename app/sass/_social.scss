@@ -8,9 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 5px;
-    width: 30px;
-    height: 30px;
+    margin: 0 10px;
+    width: 58px;
+    height: 58px;
 
     svg {
       max-width: 100%;
@@ -36,11 +36,6 @@
 @media (min-width: $desktop) {
   .social {
 
-    &__item {
-      margin: 0 19px;
-      width: 58px;
-      height: 58px;
-    }
   }
 }
 /*---------- /social ---------*/

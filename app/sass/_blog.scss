@@ -2,41 +2,41 @@
 .blog {
   position: relative;
   max-width: 1122px;
-  margin: 0 auto 30px;
-  padding: 100px 30px 30px;
+  margin: 0 auto;
+  padding: 90px 30px 49px;
   z-index: 1;
-  text-align: center;
 
   &__title {
     display: block;
     position: relative;
     z-index: 2;
-    margin-bottom: 30px;
-    color: #3F4551;
-    font-size: 5vh;
-    line-height: 9vh;
+    margin-bottom: 22px;
+    padding-left: 25px;
+    color: #293A5A;
+    font-size: 36px;
+    line-height: 36px;
     text-transform: uppercase;
     @include title();
   }
 
   &__menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: calc(100% + 30px);
     margin-bottom: 9px;
-    font-size: 14px;
-    line-height: 18px;
+    padding-left: 24px;
+    font-size: 16px;
+    line-height: 23px;
+    white-space: nowrap;
     @include subtitle-bold();
 
     &-item,
     &-item:visited {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 20px;
-      min-width: 30px;
-      padding: 4px 7px 0;
-      margin: 0 5px 5px 0;
+      height: 24px;
+      min-width: 38px;
+      padding: 4px 12px 0;
+      margin: 0 6px 11px 0;
       border-radius: 100px;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -50,14 +50,15 @@
     }
   }
 
+  &__wrap { padding: 0 5px }
+
   &__first {
-    margin-bottom: 30px;
+    margin-bottom: 83px;
     background-color: #FFFFFF;
 
     &-themes {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       margin-bottom: 9px;
       font-size: 14px;
       line-height: 18px;
@@ -69,7 +70,7 @@
         justify-content: center;
         height: 20px;
         min-width: 30px;
-        padding: 4px 7px 0;
+        padding: 4px 10px 0;
         margin: 0 5px 5px 0;
         border-radius: 100px;
         color: #FFFFFF;
@@ -81,10 +82,11 @@
     }
 
     &-pic {
+      display: block;
       overflow: hidden;
       position: relative;
       width: 100%;
-      height: calc(100vw - 60px);
+      height: 121px;
       z-index: 1;
       background-color: #fff;
 
@@ -129,40 +131,48 @@
     }
 
     &-wrap {
-      padding: 15px;
+      padding: 15px 17px 13px;
       color: #3F4551;
       font-size: 14px;
       line-height: 20px;
 
       data {
         display: block;
+        margin-bottom: 14px;
         color: #3F4551;
         font-size: 12px;
         line-height: 16px;
+        letter-spacing: .5px;
         @include subtitle-bold();
       }
 
       p {
-        margin-bottom: 15px;
+        display: none;
       }
     }
 
     &-title {
       display: block;
       color: #3F4551;
-      font-size: 20px;
-      line-height: 30px;
+      font-size: 16px;
+      line-height: 21px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       @include subtitle-medium();
+
+      span { display: block }
     }
+
+    .btn { display: none }
   }
 
   &__list {
+    padding: 0 10px;
     @include main-font();
 
     &-item {
       display: block;
-      margin-bottom: 30px;
+      margin-bottom: 26px;
       color: #3F4551;
       font-size: 12px;
       line-height: 16px;
@@ -173,8 +183,8 @@
       overflow: hidden;
       position: relative;
       width: 100%;
-      height: calc(100vw - 60px);
-      margin-bottom: 8px;
+      height: 180px;
+      margin-bottom: 19px;
       z-index: 1;
       background-color: #fff;
 
@@ -222,8 +232,8 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
+      padding: 0 2px;
       color: #3F4551;
       font-size: 13px;
       line-height: 15px;
@@ -232,7 +242,7 @@
       li {
 
         &:after {
-          padding: 0 4px;
+          padding: 0 6px;
           content: '|';
         }
 
@@ -244,11 +254,17 @@
       display: block;
       margin-bottom: 7px;
       color: #3F4551;
-      font-size: 14px;
-      line-height: 18px;
-      letter-spacing: 1.6px;
+      font-size: 16px;
+      line-height: 21px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       @include subtitle-medium();
+
+      span { display: block }
+    }
+
+    p {
+      display: none;
     }
   }
 }
@@ -271,29 +287,23 @@
   .blog {
     margin: 0 auto 100px;
     padding: 148px 0 77px;
-    text-align: left;
 
     &__menu {
-      justify-content: flex-start;
-      font-size: 16px;
-      line-height: 23px;
-
-      &-item {
-        height: 24px;
-        min-width: 38px;
-        padding: 4px 12px 0;
-        margin: 0 11px 11px 0;
-      }
+      width: 100%;
+      padding: 0;
+      margin-bottom: 88px;
     }
 
     &__title {
-      position: relative;
-      top: 0;
+      position: absolute;
+      top: 192px;
       left: 0;
       margin: 0;
+      padding: 0;
       font-size: 67px;
       line-height: 79px;
       will-change: transform;
+      color: #3F4551;
     }
 
     &__wrap {
@@ -302,7 +312,7 @@
       align-items: flex-start;
       position: relative;
       top: -42px;
-      padding-left: 62px;
+      padding: 0 0 0 62px;
     }
 
     &__first {
@@ -333,19 +343,24 @@
         line-height: 30px;
 
         data {
+          margin-bottom: 0;
           font-size: 14px;
           line-height: 23px;
+          letter-spacing: 1px;
         }
 
-        p { margin-bottom: 31px }
+        p {
+          display: block;
+          margin-bottom: 31px;
+        }
       }
 
       &-title {
         font-size: 28px;
         line-height: 37px;
-
-        span { display: block }
       }
+
+      .btn {  display: inline-flex }
     }
 
     &__list {
@@ -353,7 +368,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       width: 535px;
-      padding-top: 128px;
+      padding: 128px 0 0 0;
 
       &-item {
         position: relative;
@@ -380,14 +395,16 @@
         margin-bottom: 13px;
         font-size: 15px;
         line-height: 18px;
-
-        li:after { padding: 0 6px }
       }
 
       &-title {
         margin-bottom: 7px;
         font-size: 18px;
         line-height: 25px;
+      }
+
+      p {
+        display: block;
       }
     }
   }
