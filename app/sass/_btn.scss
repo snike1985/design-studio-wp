@@ -89,6 +89,13 @@
       color: #0200FF;
     }
   }
+
+  &.request-btn {
+    min-width: 0;
+    padding: 6px 11px 3px;
+
+    span { font-size: 15px }
+  }
 }
 @media (min-width: $phone-landscape) {
   .btn {
@@ -112,6 +119,15 @@
     span {
       font-size: 18px;
       line-height: 21px;
+    }
+
+    &.request-btn {
+      padding: 10px 23px 8px;
+
+      span {
+        font-size: 18px;
+        line-height: 21px;
+      }
     }
   }
 }

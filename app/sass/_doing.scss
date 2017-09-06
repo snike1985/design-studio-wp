@@ -6,16 +6,18 @@
   &__head {
     max-width: 1188px;
     margin: 0 auto;
-    padding: 0 50px;
-    text-align: center;
+    padding: 0 30px 0 67px;
 
     &-title {
-      min-height: 200px;
-      padding: 23px 0;
+      padding: 16px 0;
+
+      .showing-text {
+        margin-bottom: 0;
+      }
     }
 
     &-list {
-      padding: 23px 0;
+      padding: 9px 0;
 
       ul {
         color: #3F4551;
@@ -26,7 +28,9 @@
         @include subtitle-medium();
 
         li {
-          margin-bottom: 10px;
+          position: relative;
+          margin-bottom: 18px;
+          padding-left: 45px;
 
           span { display: block }
         }
@@ -36,14 +40,14 @@
 
   &__subtitle {
     position: absolute;
-    top: 459px;
-    left: 20px;
+    top: 275px;
+    left: 31px;
     transform: rotate(270deg);
     transform-origin: left;
     color: #3F4551;
-    font-size: 23px;
-    line-height: 27px;
-    white-space: nowrap;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: .1px;
     @include subtitle-bold();
   }
 
@@ -120,6 +124,9 @@
     &__subtitle {
       top: 459px;
       left: 55px;
+      font-size: 23px;
+      line-height: 27px;
+      letter-spacing: normal;
     }
 
     &__content {
