@@ -19,8 +19,8 @@
             new Menu( $(this) );
         } );
 
-        $('.request').each( function() {
-            new Request( $(this) );
+        $('.request').each( function(i) {
+            new Request( $(this), i );
         } );
 
         $('.site').each( function() {
@@ -183,7 +183,7 @@
         _init();
     };
 
-    var Request = function(obj) {
+    var Request = function(obj, objIndex) {
 
         //private properties
         var _obj = obj,
@@ -239,8 +239,8 @@
                     var text = _radioElems.eq(i).find('.wpcf7-list-item-label').text(),
                     currentInput = _radioElems.eq(i).find('input');
                     _radioElems.eq(i).addClass('nice-radio');
-                    currentInput.attr('id', 'nice-radio_' + i);
-                    currentInput.after('<label for="nice-radio_' + i +'">' + text + '</label>');
+                    currentInput.attr('id', 'nice-radio_' + objIndex + '' + i);
+                    currentInput.after('<label for="nice-radio_' + objIndex + '' + i +'">' + text + '</label>');
                 }
             },
             _changeValue = function (val) {
