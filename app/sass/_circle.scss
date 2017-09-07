@@ -38,6 +38,12 @@
     border: 59px solid #E2E3E4;
   }
 
+  &.circle_2 {
+    height: 361px;
+    width: 361px;
+    border: 99px solid #E2E3E4;
+  }
+
   &.circle_desktop { display: none }
 }
 @media (min-width: $phone-landscape) {
@@ -57,12 +63,6 @@
 }
 @media (min-width: $desktop) {
   .circle {
-
-    &.circle_min {
-      width: 117px;
-      height: 117px;
-      border: 20px solid #E2E3E4;
-    }
 
     &.circle_desktop { display: block }
     &.circle_mobile { display: none }
