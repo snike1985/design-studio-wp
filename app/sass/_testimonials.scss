@@ -19,50 +19,53 @@
     width: 100%;
     max-width: 1184px;
     margin: 0 auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
   }
   .swiper-slide {
     position: relative;
-    height: 562px;
-    opacity: 0;
+    height: 485px;
+    padding: 50px;
+    //opacity: 0;
+    color: #3F4551;
+    font-size: 15px;
+    line-height: 25px;
     text-align: center;
-    font-size: 18px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 25px 0 rgba(57,80,118,0.09);
   }
 
   .swiper-slide-prev {
-    opacity: 1;
-
-    .testimonials__item {
-      transform: scale(.82) translate(-50%,0);
-    }
+    //opacity: 1;
+    //
+    //.testimonials__item {
+    //  transform: scale(.82) translate(-50%,0);
+    //}
   }
 
   .swiper-slide-next {
-    position: relative;
-    z-index: 2;
-    opacity: 1;
-
-    .testimonials__item {
-      transform: scale(.82) translate(-50%,0);
-    }
+    //position: relative;
+    //z-index: 2;
+    //opacity: 1;
+    //
+    //.testimonials__item {
+    //  transform: scale(.82) translate(-50%,0);
+    //}
   }
 
   .swiper-slide-next + .swiper-slide {
-    position: relative;
-    z-index: 1;
-    opacity: 1;
+    //position: relative;
+    //z-index: 1;
+    //opacity: 1;
   }
 
   .swiper-slide-active {
-    position: relative;
-    z-index: 3;
-    opacity: 1;
-
-    .testimonials__item {
-      opacity: 1;
-      transform: scale(1) translate(-50%,0);
-    }
+    //position: relative;
+    //z-index: 3;
+    //opacity: 1;
+    //
+    //.testimonials__item {
+    //  opacity: 1;
+    //  transform: scale(1) translate(-50%,0);
+    //}
   }
   .swiper-pagination {
 
@@ -82,21 +85,11 @@
   }
 
   &__item {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 70vw;
-    max-width: 987px;
-    height: 100%;
-    padding: 50px;
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 25px 0 rgba(57,80,118,0.09);
     text-align: center;
     color: #3F4551;
     font-size: 16px;
     line-height: 30px;
-    transform: scale(.6) translate(-50%,0);
-    overflow: hidden;
+    //transform: scale(.6);
     transition: all .3s linear;
     background-size: cover;
     background-position: center;

@@ -12,7 +12,7 @@
                 accessToken: '5986814569.47210f5.9f4283cb2f664ba4909158fad9cb4120',
                 sortBy: 'most-recent',
                 resolution: 'low_resolution',
-                limit: 20,
+                limit: limit,
                 template: '<a href="{{link}}" class="swiper-slide" style="background-image: url({{image}})"></a>',
                 after: function () {
                     new InstagrammSlider( $(this) );
@@ -71,6 +71,7 @@
 
         //private properties
         var _obj = obj,
+            _slider = _obj.find('.swiper-container'),
             _swiper = null;
 
         //private methods
@@ -78,7 +79,7 @@
 
             },
             _initSlider = function() {
-                _swiper = new Swiper('.swiper-container', {
+                _swiper = new Swiper(_slider, {
                     slidesPerView: 5,
                     paginationClickable: true,
                     loop: true,
@@ -796,12 +797,6 @@
         //private methods
         var _addEvents = function() {
 
-                // _tabsControls.on({
-                //     'click': function () {
-                //
-                //     }
-                // });
-
                 $(window).on({
                     'resize': function () {
                         _swiper.update();
@@ -811,7 +806,6 @@
             _initSlider = function() {
                 _swiper = new Swiper(_slider, {
                     pagination: _pagination,
-                    slidesPerView: 5,
                     paginationClickable: true,
                     centeredSlides: true,
                     loop: true,
