@@ -1,0 +1,137 @@
+/*---------- about-us ----------*/
+.about-us {
+  position: relative;
+  max-width: 1163px;
+  margin: 0 auto;
+  padding: 90px 20px 25px;
+
+  &__title {
+    margin-bottom: 12px;
+    color: #293A5A;
+    font-size: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    @include title();
+  }
+
+  &__content {
+    color: #3F4551;
+    font-size: 16px;
+    line-height: 30px;
+
+    h2 {
+      margin-bottom: 21px;
+      color: #3F4551;
+      font-size: 28px;
+      line-height: 37px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      @include subtitle-medium();
+    }
+
+    p {
+      max-width: 870px;
+      margin-bottom: 21px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__pic {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      content: '';
+      background-color: rgba(2,0,255,0.7);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translate(-100%, 0);
+      transition-delay: .2s;
+      backface-visibility: hidden;
+    }
+
+    img {
+      display: block;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translate(-100%, 0);
+    }
+
+    &.is-show {
+
+      &:before {
+        transform: translate(0);
+        transition-delay: 0s;
+      }
+
+      img {
+        transform: translate(0);
+        transition-delay: .2s;
+      }
+    }
+  }
+}
+@media (min-width: $phone-landscape) {
+  .about-us {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .about-us {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .about-us {
+
+  }
+}
+@media (min-width: $desktop) {
+  .about-us {
+    padding: 192px 20px 7px;
+
+    &__title {
+      margin-bottom: 12px;
+      color: #3F4551;
+      font-size: 67px;
+      line-height: 79px;
+      letter-spacing: .6px;
+    }
+
+    &__content {
+
+      &-half {
+        display: flex;
+        padding: 116px 0;
+        margin: 0 -11px;
+
+        > div {
+          width: 50%;
+          padding: 2px 2px 50px 59px;
+
+          &:first-child { padding: 0 50px 50px 0 }
+        }
+
+        p {
+          margin-bottom: 28px;
+        }
+      }
+    }
+  }
+}
+/*---------- /about-us ---------*/
+
