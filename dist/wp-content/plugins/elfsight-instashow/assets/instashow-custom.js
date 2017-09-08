@@ -1,4 +1,0 @@
-/*
-  You can specify custom JavaScript code to InstaShow below.
-  This script will be automatically added on every page with InstaShow.
-*/
