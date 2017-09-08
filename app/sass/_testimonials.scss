@@ -1,6 +1,19 @@
 /*---------- testimonials ----------*/
 .testimonials {
+  position: relative;
   margin-bottom: 100px;
+
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+    transform-origin: top right;
+    color: #3F4551;
+    font-size: 16px;
+    line-height: 25px;
+    @include subtitle-bold();
+  }
 
   .swiper-container {
     width: 100%;
