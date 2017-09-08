@@ -1,0 +1,37 @@
+/*---------- instagram-slider ----------*/
+.instagram-slider {
+  position: relative;
+  width: 100%;
+
+  .swiper-slide {
+    display: block;
+    height: 25vw;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@media (min-width: $phone-landscape) {
+  .instagram-slider {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .instagram-slider {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .instagram-slider {
+
+  }
+}
+@media (min-width: $desktop) {
+  .instagram-slider {
+
+    .swiper-slide { height: calc(100vw/5) }
+  }
+}
+/*---------- /instagram-slider ---------*/
+

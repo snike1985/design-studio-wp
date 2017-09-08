@@ -3,7 +3,8 @@
 
     $(function(){
 
-        $('.be-friends__instagram').each( function() {
+        $('.instagramm-slider').each( function() {
+            var limit = $(this).data('limit');
             var feed = new Instafeed({
                 get: 'user',
                 clientId: '47210f502d7648a8b6fc630cef894853',
@@ -11,11 +12,13 @@
                 accessToken: '5986814569.47210f5.9f4283cb2f664ba4909158fad9cb4120',
                 sortBy: 'most-recent',
                 resolution: 'low_resolution',
-                limit: 20
+                limit: 20,
+                template: '<a href="{{link}}" class="swiper-slide" style="background-image: url({{image}})"></a>',
+                after: function () {
+                    new InstagrammSlider( $(this) );
+                }
             });
             feed.run();
-
-            new InstagrammSlider( $(this) );
         } );
 
         $('.blog').each( function() {
@@ -67,24 +70,29 @@
     var InstagrammSlider = function(obj) {
 
         //private properties
-        var _obj = obj;
+        var _obj = obj,
+            _swiper = null;
 
         //private methods
         var _addEvents = function() {
 
-                $( window ).on({
-                    'resize': function() {
-
+            },
+            _initSlider = function() {
+                _swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 5,
+                    paginationClickable: true,
+                    loop: true,
+                    spaceBetween: 0,
+                    breakpoints: {
+                        1200: {
+                            slidesPerView: 4
+                        }
                     }
                 });
-
-            },
-            _initScroll = function() {
-
             },
             _init = function() {
                 _addEvents();
-                _initScroll();
+                _initSlider();
             };
 
         //public properties
