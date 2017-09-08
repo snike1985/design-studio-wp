@@ -331,22 +331,22 @@
 
                 _window.on( {
                     'scroll': function() {
-                        // if ( _canMove ) {
-                        //     var scrollTop = $(window).scrollTop();
-                        //     _move( scrollTop );
-                        // } else {
-                        //     _move( 0 );
-                        // }
+                        if ( _canMove ) {
+                            var scrollTop = $(window).scrollTop();
+                            _move( scrollTop );
+                        } else {
+                            _move( 0 );
+                        }
                     },
                     'load': function() {
                         _changeCanMove();
 
-                        // if ( _canMove ) {
-                        //     var scrollTop = $(window).scrollTop();
-                        //     _move( scrollTop );
-                        // } else {
-                        //     _move( 0 );
-                        // }
+                        if ( _canMove ) {
+                            var scrollTop = $(window).scrollTop();
+                            _move( scrollTop );
+                        } else {
+                            _move( 0 );
+                        }
                     },
                     'resize': function() {
                         _changeCanMove();
@@ -430,6 +430,42 @@
                             } else {
                                 _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
                             }
+                        }
+                    }
+                } );
+
+                $('.team__title').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .5;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.team__item').each( function(i) {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = .05;
+
+                    if ( i % 2 == 0 ) {
+                        curKoef = -curKoef;
+                    }
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
                         }
                     }
                 } );
