@@ -278,22 +278,22 @@
 
                 _window.on( {
                     'scroll': function() {
-                        if ( _canMove ) {
-                            var scrollTop = $(window).scrollTop();
-                            _move( scrollTop );
-                        } else {
-                            _move( 0 );
-                        }
+                        // if ( _canMove ) {
+                        //     var scrollTop = $(window).scrollTop();
+                        //     _move( scrollTop );
+                        // } else {
+                        //     _move( 0 );
+                        // }
                     },
                     'load': function() {
                         _changeCanMove();
 
-                        if ( _canMove ) {
-                            var scrollTop = $(window).scrollTop();
-                            _move( scrollTop );
-                        } else {
-                            _move( 0 );
-                        }
+                        // if ( _canMove ) {
+                        //     var scrollTop = $(window).scrollTop();
+                        //     _move( scrollTop );
+                        // } else {
+                        //     _move( 0 );
+                        // }
                     },
                     'resize': function() {
                         _changeCanMove();

@@ -17,27 +17,34 @@
 
   &__content {
     color: #3F4551;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 13px;
+    line-height: 26px;
 
     h2 {
-      margin-bottom: 21px;
+      margin-bottom: 12px;
       color: #3F4551;
-      font-size: 28px;
-      line-height: 37px;
-      letter-spacing: 1.5px;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       @include subtitle-medium();
     }
 
     p {
       max-width: 870px;
-      margin-bottom: 21px;
+      margin-bottom: 14px;
     }
 
     img {
       display: block;
       width: 100%;
+    }
+
+    &-half {
+
+      > div {
+        padding-bottom: 14px;
+      }
     }
   }
 
@@ -102,7 +109,7 @@
 }
 @media (min-width: $desktop) {
   .about-us {
-    padding: 192px 20px 7px;
+    padding: 192px 20px 0;
 
     &__title {
       margin-bottom: 12px;
@@ -113,17 +120,28 @@
     }
 
     &__content {
+      font-size: 16px;
+      line-height: 30px;
+
+      h2 {
+        margin-bottom: 21px;
+        font-size: 28px;
+        line-height: 37px;
+        letter-spacing: 1.5px;
+      }
+
+      p { margin-bottom: 21px }
 
       &-half {
         display: flex;
-        padding: 116px 0;
+        padding: 116px 0 0;
         margin: 0 -11px;
 
         > div {
           width: 50%;
-          padding: 2px 2px 50px 59px;
+          padding: 2px 2px 9px 59px;
 
-          &:first-child { padding: 0 50px 50px 0 }
+          &:first-child { padding: 0 50px 0 0 }
         }
 
         p {
