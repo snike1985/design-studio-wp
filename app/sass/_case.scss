@@ -313,6 +313,8 @@
     padding-bottom: 15px;
     margin-bottom: 19px;
   }
+
+  .logo { display: none }
 }
 @media (min-width: $phone-landscape) {
   .case {
@@ -331,7 +333,7 @@
 }
 @media (min-width: $desktop) {
   .case {
-    padding: 192px 0 100px;
+    padding: 192px 0 55px;
 
     &__title {
       margin-bottom: 17px;
@@ -410,11 +412,14 @@
     }
 
     &__slider {
+      top: 8px;
       height: 640px;
       padding: 0 125px;
+      margin-bottom: 193px;
 
       &.case__slider_light {
         padding: 0 125px;
+        margin-bottom: 59px;
 
         &:before,
         &:after { width: 125px }
@@ -422,13 +427,14 @@
 
       &-prev,
       &-next {
-        //height: 31.06px;
-        //width: 112.97px;
-        //margin-top: -15.5px;
+        height: 31.06px;
+        width: 112.97px;
+        margin-top: -15.5px;
 
         &:hover {
 
           &:before {
+            left: 76px;
             opacity: 1;
             letter-spacing: 40px;
           }
@@ -436,7 +442,7 @@
       }
 
       &-prev {
-        left: 76px;
+        left: 53px;
 
         &:before {
           position: absolute;
@@ -459,7 +465,7 @@
         }
       }
       &-next {
-        right: 76px;
+        right: 53px;
 
         &:before {
           position: absolute;
@@ -488,16 +494,40 @@
       a,
       a:visited {
         height: 139px;
-        padding: 35px 67px;
-        font-size: 18px;
+        padding: 5px 67px 0;
+        font-size: 16px;
         line-height: 25px;
         letter-spacing: 0;
       }
 
       span {
-        font-size: 20px;
-        line-height: 27px;
+        padding-top: 8px;
+        font-size: 36px;
+        line-height: 42px;
+        text-transform: none;
       }
+
+      a.case__pagination-prev {
+        padding-left: 144px;
+      }
+
+      a.case__pagination-next {
+        padding-right: 144px;
+      }
+    }
+
+    .logo {
+      display: block;
+      margin-bottom: 45px;
+      opacity: 0.15;
+      text-align: center;
+
+      strong { color: #3F4551 }
+    }
+
+    .case__slider+.bright {
+      padding-bottom: 96px;
+      margin-bottom: 39px;
     }
   }
 }
