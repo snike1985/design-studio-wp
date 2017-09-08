@@ -37,7 +37,7 @@ if ($posts) {
 	          $work_item_tags .= '<li>'.$rows->name.'</li>';
           }
         }
-        $work_string .= '<div class="works__item show '.$work_item_class.'">
+        $work_string .= '<a href="'.get_permalink($row).'" class="works__item show '.$work_item_class.'">
 					<img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_post_meta($row, '_wp_attachment_image_alt', true).'">
 					<div class="works__item-footer">
 						<ul class="works__item-text">
@@ -47,7 +47,7 @@ if ($posts) {
 							'.$work_item_tags.'
 						</ul>
 					</div>
-				</div>';
+				</a>';
     }
 }
 ?>
