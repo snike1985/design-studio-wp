@@ -98,7 +98,7 @@ function add_js() {
 		wp_enqueue_style('blog-page');
 	}
 
-	if(is_singular()) {
+	if(is_singular('post')) {
 	  wp_enqueue_style('article-page');
 	}
 

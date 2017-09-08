@@ -55,7 +55,10 @@ if(!empty($title_form_header)) {
     }
 	$title_form_header_string .= '</strong>';
 }
-
+$class = '';
+if(is_front_page()) {
+    $class= ' site_main';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +74,7 @@ if(!empty($title_form_header)) {
 <body>
 
 <!-- site -->
-<div class="site site_main">
+<div class="site <?= $class; ?>">
 
     <!-- site__header -->
     <header class="site__header">

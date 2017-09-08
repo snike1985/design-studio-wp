@@ -1,5 +1,4 @@
 <?php
-// Register Custom Post Type
 add_action('init', 'custom_post_type', 0);
 
 function custom_post_type() {
@@ -28,6 +27,7 @@ function custom_post_type() {
         'exclude_from_search' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'menu_icon' => 'dashicons-portfolio',
         'rewrite' => array(
             'with_front' => true
         )

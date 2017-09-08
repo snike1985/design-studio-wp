@@ -41,6 +41,10 @@ let paths = {
             contains: [
                 'app/js/jquery.tabs.js'
             ]
+        },
+        {
+            dist: 'bright-button.min.js',
+            contains: 'app/js/bright-button.js'
         }
     ],
     vendorScripts: 'app/js/vendors/**/*.js',
