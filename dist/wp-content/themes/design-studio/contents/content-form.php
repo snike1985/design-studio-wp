@@ -26,6 +26,7 @@ $title_form = get_field('title_form', $contact_id);
 if($title_form) {
 	$title_form = '<strong class="contact-us__title">'.$title_form.'</strong>';
 }
+if(!is_page(14)){
 ?>
 <!-- contact-us -->
 <div class="contact-us">
@@ -40,6 +41,7 @@ if($title_form) {
 
 </div>
 <!-- /contact-us -->
+<?php } ?>
 
 <!-- be-friends -->
 <div class="be-friends">
