@@ -1,5 +1,5 @@
-/*---------- instagram-slider ----------*/
-.instagram-slider {
+/*---------- instagramm-slider ----------*/
+.instagramm-slider {
   position: relative;
   width: 100%;
 
@@ -13,25 +13,25 @@
   }
 }
 @media (min-width: $phone-landscape) {
-  .instagram-slider {
+  .instagramm-slider {
 
   }
 }
 @media (min-width: $tablet-portrait) {
-  .instagram-slider {
+  .instagramm-slider {
 
   }
 }
 @media (min-width: $tablet-landscape) {
-  .instagram-slider {
+  .instagramm-slider {
 
   }
 }
 @media (min-width: $desktop) {
-  .instagram-slider {
+  .instagramm-slider {
 
     .swiper-slide { height: calc(100vw/5) }
   }
 }
-/*---------- /instagram-slider ---------*/
+/*---------- /instagramm-slider ---------*/
 
