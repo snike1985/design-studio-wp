@@ -335,22 +335,13 @@
 
                 _window.on( {
                     'scroll': function() {
-                        if ( _canMove ) {
-                            var scrollTop = $(window).scrollTop();
-                            _move( scrollTop );
-                        } else {
-                            _move( 0 );
-                        }
+                        var scrollTop = $(window).scrollTop();
+                        _move( scrollTop );
                     },
                     'load': function() {
+                        var scrollTop = $(window).scrollTop();
                         _changeCanMove();
-
-                        if ( _canMove ) {
-                            var scrollTop = $(window).scrollTop();
-                            _move( scrollTop );
-                        } else {
-                            _move( 0 );
-                        }
+                        _move( scrollTop );
                     },
                     'resize': function() {
                         _changeCanMove();
@@ -386,6 +377,9 @@
             _paralax = function( elem, x, y, koef ) {
                 var translate = 'translate3d(' + Math.round(x*koef) + 'px, ' + Math.round(y*koef) + 'px, 0px )';
 
+                if (!_canMove) {
+                    translate = 'translate3d(0px, 0px)';
+                }
                 elem.css( {
                     'transform': translate
                 } );
