@@ -42,7 +42,7 @@ if(!is_page(14)){
 	</div>
 </div>
 <?php if(is_front_page()){ ?>
-    <div class="instagramm-slider" data-limit="<?= get_field('instagram_count', 2)?>" data-userId="<?= get_field('instagram_user_id', 2)?>" data-clientId="<?= get_field('instagram_client_id', 2)?>">
+    <div class="instagramm-slider" data-limit="<?= get_field('instagram_count', 2)?>" data-user-id="<?= get_field('instagram_user_id', 2)?>" data-client-id="<?= get_field('instagram_client_id', 2)?>" data-access-token="<?= get_field('instagram_access_token', 2)?>">
         <div class="swiper-container">
             <div class="swiper-wrapper" id="instafeed"></div>
         </div>

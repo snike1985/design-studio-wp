@@ -86,9 +86,9 @@ function add_js() {
 
 	if(is_front_page()) {
 		wp_enqueue_script('swiper');
+		wp_enqueue_script('instafeed');
 
 		wp_enqueue_style('swiper');
-		wp_enqueue_style('instafeed');
 		wp_enqueue_style('index');
 	}
 

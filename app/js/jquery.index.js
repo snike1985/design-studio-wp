@@ -4,15 +4,18 @@
     $(function(){
 
         $('.instagramm-slider').each( function() {
-            var limit = $(this).data('limit');
+            var limit = $(this).data('limit'),
+                userId = $(this).data('user-id'),
+                accessToken = $(this).data('access-token'),
+                clientId = $(this).data('client-id');
             var feed = new Instafeed({
                 get: 'user',
-                clientId: '47210f502d7648a8b6fc630cef894853',
-                userId: '5986814569',
-                accessToken: '5986814569.47210f5.9f4283cb2f664ba4909158fad9cb4120',
+                clientId: clientId,
+                userId: userId,
+                accessToken: accessToken,
                 sortBy: 'most-recent',
                 resolution: 'low_resolution',
-                limit: 20,
+                limit: limit,
                 template: '<a href="{{link}}" class="swiper-slide" style="background-image: url({{image}})"></a>',
                 after: function () {
                     new InstagrammSlider( $(this) );
