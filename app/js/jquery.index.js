@@ -3,6 +3,24 @@
 
     $(function(){
 
+        $('.instagramm-slider').each( function() {
+            var limit = $(this).data('limit');
+            var feed = new Instafeed({
+                get: 'user',
+                clientId: '47210f502d7648a8b6fc630cef894853',
+                userId: '5986814569',
+                accessToken: '5986814569.47210f5.9f4283cb2f664ba4909158fad9cb4120',
+                sortBy: 'most-recent',
+                resolution: 'low_resolution',
+                limit: 20,
+                template: '<a href="{{link}}" class="swiper-slide" style="background-image: url({{image}})"></a>',
+                after: function () {
+                    new InstagrammSlider( $(this) );
+                }
+            });
+            feed.run();
+        } );
+
         $('.blog').each( function() {
             new Blog( $(this) );
         } );
@@ -48,6 +66,41 @@
         } );
 
     });
+
+    var InstagrammSlider = function(obj) {
+
+        //private properties
+        var _obj = obj,
+            _swiper = null;
+
+        //private methods
+        var _addEvents = function() {
+
+            },
+            _initSlider = function() {
+                _swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 5,
+                    paginationClickable: true,
+                    loop: true,
+                    spaceBetween: 0,
+                    breakpoints: {
+                        1200: {
+                            slidesPerView: 4
+                        }
+                    }
+                });
+            },
+            _init = function() {
+                _addEvents();
+                _initSlider();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
 
     var Blog = function(obj) {
 
@@ -278,22 +331,22 @@
 
                 _window.on( {
                     'scroll': function() {
-                        if ( _canMove ) {
-                            var scrollTop = $(window).scrollTop();
-                            _move( scrollTop );
-                        } else {
-                            _move( 0 );
-                        }
+                        // if ( _canMove ) {
+                        //     var scrollTop = $(window).scrollTop();
+                        //     _move( scrollTop );
+                        // } else {
+                        //     _move( 0 );
+                        // }
                     },
                     'load': function() {
                         _changeCanMove();
 
-                        if ( _canMove ) {
-                            var scrollTop = $(window).scrollTop();
-                            _move( scrollTop );
-                        } else {
-                            _move( 0 );
-                        }
+                        // if ( _canMove ) {
+                        //     var scrollTop = $(window).scrollTop();
+                        //     _move( scrollTop );
+                        // } else {
+                        //     _move( 0 );
+                        // }
                     },
                     'resize': function() {
                         _changeCanMove();

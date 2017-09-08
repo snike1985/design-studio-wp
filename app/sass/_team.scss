@@ -2,7 +2,7 @@
 .team {
   position: relative;
   max-width: 935px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
   padding: 30px 40px;
   z-index: 1;
 
@@ -20,7 +20,7 @@
     height: calc(100vw - 66px);
     max-width: 440px;
     max-height: 440px;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     background-color: #fff;
     transform: translate(-15px, 0px);
 
@@ -81,8 +81,8 @@
 
     &-footer {
       position: absolute;
-      bottom: -78px;
-      left: -18px;
+      bottom: -40px;
+      left: -12px;
       width: 100%;
       z-index: 3;
       text-align: left;
@@ -91,17 +91,16 @@
     &-name {
       display: block;
       color: #0200FF;
-      font-size: 54px;
-      line-height: 64px;
+      font-size: 30px;
+      line-height: 42px;
       text-transform: uppercase;
       @include title();
     }
 
     &-proffesion {
-      padding-top: 9px;
       color: #3F4551;
-      font-size: 28px;
-      line-height: 37px;
+      font-size: 18px;
+      line-height: 25px;
       letter-spacing: 1.1px;
       text-transform: uppercase;
       @include subtitle-medium();
@@ -147,15 +146,19 @@
       &.mobile-hide { display: block }
 
       &-footer {
-
+        bottom: -78px;
+        left: -18px;
       }
 
       &-name {
-
+        font-size: 54px;
+        line-height: 64px;
       }
 
       &-proffesion {
-
+        padding-top: 9px;
+        font-size: 28px;
+        line-height: 37px;
       }
     }
   }
