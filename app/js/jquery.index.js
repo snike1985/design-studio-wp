@@ -3,6 +3,21 @@
 
     $(function(){
 
+        $('.be-friends__instagram').each( function() {
+            var feed = new Instafeed({
+                get: 'user',
+                clientId: '47210f502d7648a8b6fc630cef894853',
+                userId: '5986814569',
+                accessToken: '5986814569.47210f5.9f4283cb2f664ba4909158fad9cb4120',
+                sortBy: 'most-recent',
+                resolution: 'low_resolution',
+                limit: 20
+            });
+            feed.run();
+
+            new InstagrammSlider( $(this) );
+        } );
+
         $('.blog').each( function() {
             new Blog( $(this) );
         } );
@@ -48,6 +63,36 @@
         } );
 
     });
+
+    var InstagrammSlider = function(obj) {
+
+        //private properties
+        var _obj = obj;
+
+        //private methods
+        var _addEvents = function() {
+
+                $( window ).on({
+                    'resize': function() {
+
+                    }
+                });
+
+            },
+            _initScroll = function() {
+
+            },
+            _init = function() {
+                _addEvents();
+                _initScroll();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
 
     var Blog = function(obj) {
 
