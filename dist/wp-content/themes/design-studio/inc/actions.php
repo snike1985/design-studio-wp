@@ -62,6 +62,7 @@ function add_js() {
 	wp_register_script('TweenMax', get_template_directory_uri() . '/assets/js/vendors/TweenMax.min.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/TweenMax.min.js'), true);
 	wp_register_script('isotope', get_template_directory_uri() . '/assets/js/vendors/isotope.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/isotope.js'), true);
 	wp_register_script('perfect-scrollbar', get_template_directory_uri() . '/assets/js/vendors/perfect-scrollbar.jquery.min.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/perfect-scrollbar.jquery.min.js'), true);
+	wp_register_script('instafeed', get_template_directory_uri() . '/assets/js/vendors/instafeed.min.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/instafeed.min.js'), true);
 
 	wp_register_style('style', get_stylesheet_uri(), false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..').'/style.css'));
 	wp_register_style('index', get_template_directory_uri() . '/assets/css/index.css',false, filemtime( realpath(__DIR__ . DIRECTORY_SEPARATOR . '..').'/assets/css/index.css'));
@@ -87,6 +88,7 @@ function add_js() {
 		wp_enqueue_script('swiper');
 
 		wp_enqueue_style('swiper');
+		wp_enqueue_style('instafeed');
 		wp_enqueue_style('index');
 	}
 

@@ -91,14 +91,15 @@ if (!empty($work)) {
         <section class="works">
             <strong class="works__title works__title_left"><?= get_field('title_work', $post_id); ?></strong>
             <div class="works__list"><?= $work_string; ?></div>
-            <a href="<?= get_permalink(5); ?>" class="btn"><span><?= get_field('title_button_work', $post_id); ?></span></a>
+            <a href="<?= get_permalink(5); ?>" class="btn works__btn"><span><?= get_field('title_button_work', $post_id); ?></span></a>
         </section>
 	    <?php }
 	    get_template_part( '/contents/content', 'form'); ?>
 
     </main>
     <span class="circle circle_semi circle_mobile" style="top: 356px; right: 60vw"></span>
-    <span class="circle circle_desktop" style="top: 1080px; left: 2vw"></span>
-    <span class="circle circle_desktop circle_2" style="top: 434px; left: 30vw"></span>
+    <span class="circle circle_middle circle_mobile" style="top: 1356px; left: 55vw"></span>
+    <span class="circle circle_big circle_desktop" style="top: 604px; left: calc(50% - 315px)"></span>
+    <span class="circle circle_desktop" style="top: 1560px; left: 80vw"></span>
 <?php
 get_footer();

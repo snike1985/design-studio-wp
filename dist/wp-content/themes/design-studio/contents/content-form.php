@@ -28,39 +28,23 @@ if($title_form) {
 }
 if(!is_page(14)){
 ?>
-<!-- contact-us -->
 <div class="contact-us">
-
 	<?= $title_form.get_field('content_form', $contact_id); ?>
-
-	<!-- contact-us__form -->
 	<div class="contact-us__form">
 		<?= do_shortcode('[contact-form-7 id="86" title="Contact"]'); ?>
 	</div>
-	<!-- /contact-us__form -->
-
 </div>
-<!-- /contact-us -->
 <?php } ?>
-
-<!-- be-friends -->
 <div class="be-friends">
-
 	<?= $title_social; ?>
-
-	<!-- social -->
 	<div class="social">
 		<?= $social_links_list; ?>
 	</div>
-	<!-- /social -->
-
-	<?php if(is_front_page()){ ?>
-	<!-- be-friends__instagram -->
-	<div class="be-friends__instagram">
-        <?= do_shortcode('[instashow id="1"]'); ?>
-	</div>
-	<!-- /be-friends__instagram -->
-	<?php } ?>
-
 </div>
-<!-- /be-friends -->
+<?php if(is_front_page()){ ?>
+    <div class="instagramm-slider" data-limit="<?= get_field('instagram_count', 2)?>" data-userId="<?= get_field('instagram_user_id', 2)?>" data-clientId="<?= get_field('instagram_client_id', 2)?>">
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="instafeed"></div>
+        </div>
+    </div>
+<?php } ?>
