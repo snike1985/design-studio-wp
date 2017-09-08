@@ -4,8 +4,9 @@
     $(function(){
 
         $('.instagramm-slider').each( function() {
-            var limit = $(this).data('limit');
-            var feed = new Instafeed({
+            var curElem = $(this),
+                limit = curElem.data('limit'),
+                feed = new Instafeed({
                 get: 'user',
                 clientId: '47210f502d7648a8b6fc630cef894853',
                 userId: '5986814569',
@@ -15,7 +16,9 @@
                 limit: limit,
                 template: '<a href="{{link}}" class="swiper-slide" style="background-image: url({{image}})"></a>',
                 after: function () {
-                    new InstagrammSlider( $(this) );
+                    setTimeout(function () {
+                        new InstagrammSlider( curElem );
+                    }, 2000)
                 }
             });
             feed.run();
@@ -806,10 +809,15 @@
             _initSlider = function() {
                 _swiper = new Swiper(_slider, {
                     pagination: _pagination,
-                    paginationClickable: true,
-                    centeredSlides: true,
                     loop: true,
-                    spaceBetween: 0
+                    spaceBetween: 0,
+                    effect: 'cube',
+                    cube: {
+                        shadow: false,
+                        slideShadows: false,
+                        shadowOffset: 10,
+                        shadowScale: 0.94
+                    }
                 });
 
             },

@@ -134,17 +134,19 @@
 @media (min-width: $desktop) {
   .doing {
     position: relative;
-    margin-bottom: 113px;
+    margin-bottom: 83px;
 
     &__head {
       display: flex;
-      margin-bottom: 75px;
+      margin-bottom: 39px;
+      padding: 0 7px 53px 20px;
 
       &-title {
         display: flex;
         align-items: center;
         width: 50%;
         min-height: 522px;
+        margin-top: -17px;
       }
 
       &-list {
@@ -172,6 +174,7 @@
 
     &__content {
       min-height: 569px;
+      left: -11px;
       margin: 0 auto;
       padding: 87px 85px;
 

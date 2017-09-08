@@ -35,6 +35,7 @@
     top: -53px;
     right: -27px;
     min-width: 412px;
+    margin-bottom: -66px;
 
     > img {
       display: block;
@@ -148,21 +149,25 @@
 @media (min-width: $desktop) {
   .clients {
     position: relative;
-    padding: 0 140px;
-    height: 700px;
+    padding: 0 30px;
+    min-height: 700px;
+    max-width: 1220px;
+    margin: 0 auto 10px;
 
     &__content {
       padding: 30px 20px;
       font-size: 16px;
       line-height: 30px;
 
+      .showing-text { margin-bottom: 29px }
+
       .btn { display: inline-flex }
     }
 
     &__map {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 30px;
+      right: -91px;
       height: 519px;
       width: 872px;
 
