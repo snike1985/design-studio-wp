@@ -4,7 +4,11 @@ $contact_id = 14;
 
 $logo = get_field('logo', $home_id);
 if($logo) {
-    $logo = '<div class="logo">'.$logo.'</div>';
+    if(is_front_page()) {
+	    $logo = '<div class="logo">'.$logo.'</div>';
+    } else {
+	    $logo = '<a href="'.get_home_url().'" class="logo">'.$logo.'</a>';
+    }
 }
 
 $menu_name = 'menu';

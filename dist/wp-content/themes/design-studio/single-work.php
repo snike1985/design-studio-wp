@@ -1,6 +1,7 @@
 <?php
 get_header();
 
+$home_id = 2;
 $post_item_category = get_the_terms($post->ID,'work_cat');
 $post_item_tags = '';
 if(!empty($post_item_category)) {
@@ -78,7 +79,10 @@ if(!empty($previous_post)) {
 					<div>prev project<span>'.$previous_post->post_title.'</span></div>
 				</a>';
 }
-
+$logo = get_field('logo', $home_id);
+if($logo) {
+	$logo = '<a href="'.get_home_url().'" class="logo">'.$logo.'</a>';
+}
 ?>
     <main class="site__content">
 
@@ -96,7 +100,7 @@ if(!empty($previous_post)) {
 
             </div>
 
-            <?= $content; ?>
+            <?= $content.$logo; ?>
 
             <?php if($next_post_string || $previous_post_string){ ?>
             <nav class="case__pagination">
@@ -110,5 +114,40 @@ if(!empty($previous_post)) {
 	    <?php get_template_part( '/contents/content', 'form'); ?>
 
     </main>
+
+    <!-- circle -->
+    <div class="circle circle_semi circle_mobile" style="top: 564px; right: 60vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_min circle_mobile" style="top: 1521px; left: 44vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_min circle_mobile" style="top: 2603px; left: 44vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_min circle_mobile" style="top: 3198px; left: 44vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_semi circle_mobile" style="top: 3572px; right: 60vw"></div>
+    <!-- /circle -->
+
+    <!-- circle -->
+    <div class="circle circle_2 circle_desktop" style="top: 377px; left: 15vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_min circle_desktop" style="top: 1788px; left: 48vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_desktop" style="top: 1865px; left: 70vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_min circle_desktop" style="top: 3034px; left: 48vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_min circle_desktop" style="top: 4044px; left: 48vw"></div>
+    <!-- /circle -->
+    <!-- circle -->
+    <div class="circle circle_2 circle_desktop" style="top: 4334px; left: 10vw"></div>
+    <!-- /circle -->
 
 <?php get_footer();
