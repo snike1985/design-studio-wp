@@ -160,7 +160,6 @@
       width: 100%;
       min-height: 100%;
       z-index: 2;
-      will-change: transform;
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transform: translate(-100%, 0);
     }
@@ -346,7 +345,6 @@
       padding: 0;
       font-size: 67px;
       line-height: 79px;
-      will-change: transform;
       color: #3F4551;
 
       &.works__title_left {
