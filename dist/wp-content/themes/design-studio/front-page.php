@@ -149,10 +149,15 @@ if($title_button_clients) {
 	$title_button_clients = '<a href="'.get_permalink($work_id).'" class="btn"><span>'.$title_button_clients.'</span></a>';
 }
 
+$title_testimonials = get_field('title_testimonials', $home_id);
+if($title_testimonials) {
+	$title_testimonials = '<strong class="testimonials__title">'.$title_testimonials.'</strong>';
+}
+
 $testimonials = get_field('testimonials', $home_id);
 $testimonials_string = '';
-if(!empty($testimonials)) {
-	$testimonials_string = '<div class="testimonials"><div class="swiper-container"><div class="swiper-wrapper">';
+if(!empty($testimonials) && false) {
+	$testimonials_string = '<div class="testimonials">'.$title_testimonials.'<div class="swiper-container"><div class="swiper-wrapper">';
 	foreach ($testimonials as $row) {
 		$testimonials_string .= '<div class="swiper-slide">
                         <div class="testimonials__item">
