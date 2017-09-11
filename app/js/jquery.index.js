@@ -4,11 +4,9 @@
     $(function(){
 
         $('.instagramm-slider').each( function() {
-            var limit = $(this).data('limit'),
-                userId = $(this).data('user-id'),
-                accessToken = $(this).data('access-token'),
-                clientId = $(this).data('client-id');
-            var feed = new Instafeed({
+            var curElem = $(this),
+                limit = curElem.data('limit'),
+                feed = new Instafeed({
                 get: 'user',
                 clientId: clientId,
                 userId: userId,
@@ -18,7 +16,9 @@
                 limit: limit,
                 template: '<a href="{{link}}" class="swiper-slide" style="background-image: url({{image}})"></a>',
                 after: function () {
-                    new InstagrammSlider( $(this) );
+                    setTimeout(function () {
+                        new InstagrammSlider( curElem );
+                    }, 2000)
                 }
             });
             feed.run();
@@ -74,6 +74,7 @@
 
         //private properties
         var _obj = obj,
+            _slider = _obj.find('.swiper-container'),
             _swiper = null;
 
         //private methods
@@ -81,7 +82,7 @@
 
             },
             _initSlider = function() {
-                _swiper = new Swiper('.swiper-container', {
+                _swiper = new Swiper(_slider, {
                     slidesPerView: 5,
                     paginationClickable: true,
                     loop: true,
@@ -334,22 +335,13 @@
 
                 _window.on( {
                     'scroll': function() {
-                        if ( _canMove ) {
-                            var scrollTop = $(window).scrollTop();
-                            _move( scrollTop );
-                        } else {
-                            _move( 0 );
-                        }
+                        var scrollTop = $(window).scrollTop();
+                        _move( scrollTop );
                     },
                     'load': function() {
+                        var scrollTop = $(window).scrollTop();
                         _changeCanMove();
-
-                        if ( _canMove ) {
-                            var scrollTop = $(window).scrollTop();
-                            _move( scrollTop );
-                        } else {
-                            _move( 0 );
-                        }
+                        _move( scrollTop );
                     },
                     'resize': function() {
                         _changeCanMove();
@@ -385,6 +377,9 @@
             _paralax = function( elem, x, y, koef ) {
                 var translate = 'translate3d(' + Math.round(x*koef) + 'px, ' + Math.round(y*koef) + 'px, 0px )';
 
+                if (!_canMove) {
+                    translate = 'translate3d(0px, 0px)';
+                }
                 elem.css( {
                     'transform': translate
                 } );
@@ -799,12 +794,6 @@
         //private methods
         var _addEvents = function() {
 
-                // _tabsControls.on({
-                //     'click': function () {
-                //
-                //     }
-                // });
-
                 $(window).on({
                     'resize': function () {
                         _swiper.update();
@@ -814,11 +803,15 @@
             _initSlider = function() {
                 _swiper = new Swiper(_slider, {
                     pagination: _pagination,
-                    slidesPerView: 5,
-                    paginationClickable: true,
-                    centeredSlides: true,
                     loop: true,
-                    spaceBetween: 0
+                    spaceBetween: 0,
+                    effect: 'cube',
+                    cube: {
+                        shadow: false,
+                        slideShadows: false,
+                        shadowOffset: 10,
+                        shadowScale: 0.94
+                    }
                 });
 
             },

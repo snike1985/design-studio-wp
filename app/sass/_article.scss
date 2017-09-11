@@ -186,7 +186,8 @@
 
         &:before { transform: scaleX(1) }
 
-        div { color: #FFFFFF }
+        div,
+        span { color: #FFFFFF }
       }
     }
 
@@ -207,7 +208,10 @@
       &:hover:before { transform-origin: left }
     }
 
-    span { display: none }
+    span {
+      display: none;
+      transition: color .7s cubic-bezier(.19,1,.22,1);
+    }
   }
 }
 @media (min-width: $phone-landscape) {
