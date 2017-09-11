@@ -95,7 +95,6 @@ if (!empty($work)) {
         </section>
 	    <?php }
 	    get_template_part( '/contents/content', 'form'); ?>
-
     </main>
     <span class="circle circle_semi circle_mobile" style="top: 356px; right: 60vw"></span>
     <span class="circle circle_middle circle_mobile" style="top: 1356px; left: 55vw"></span>

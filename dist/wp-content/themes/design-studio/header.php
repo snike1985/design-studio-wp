@@ -76,74 +76,31 @@ if(is_front_page()) {
     <?php wp_head(); ?>
 </head>
 <body>
-
-<!-- site -->
 <div class="site <?= $class; ?>">
-
-    <!-- site__header -->
     <header class="site__header">
-
         <?= $logo; ?>
-
-        <!-- menu -->
         <nav class="menu">
-
             <span class="menu__btn"><span></span></span>
-
-            <!-- menu__wrap -->
             <div class="menu__wrap">
-
-                <!-- menu__head -->
                 <div class="menu__head">
-
 	                <?= $logo; ?>
-
                 </div>
-                <!-- /menu__head -->
-
                 <?= $menu_list; ?>
-
-                <!-- menu__footer -->
                 <div class="menu__footer">
-
-                    <!-- social -->
                     <div class="social">
                         <?= $social_links_list; ?>
                     </div>
-                    <!-- /social -->
-
                 </div>
-                <!-- /menu__footer -->
-
             </div>
-            <!-- /menu__wrap -->
-
         </nav>
-        <!-- /menu -->
-
-        <!-- request -->
         <div class="request">
-
-            <!-- request__wrap -->
             <div class="request__wrap">
-
                 <span class="request__close"></span>
-
                 <?= $title_form_header_string; ?>
-
-                <!-- request__form -->
                 <div class="request__form">
 	                <?= do_shortcode('[contact-form-7 id="23" title="Contact form 1"]'); ?>
                 </div>
-                <!-- /request__form -->
-
             </div>
-            <!-- /request__wrap -->
-
         </div>
-        <!-- /request -->
-
        <?= $title_button_header; ?>
-
     </header>
-    <!-- /site__header -->

@@ -85,69 +85,32 @@ if($logo) {
 }
 ?>
     <main class="site__content">
-
         <section class="case">
-
             <div class="case__head">
-
                 <h1 class="case__title"><?= $post->post_title; ?></h1>
-
                 <?= $post_item_tags; ?>
-
                 <div class="case__head-info">
                     <?php the_content($post->ID); ?>
                 </div>
-
             </div>
-
             <?= $content.$logo; ?>
-
             <?php if($next_post_string || $previous_post_string){ ?>
             <nav class="case__pagination">
 	            <?= $next_post_string.$previous_post_string; ?>
             </nav>
             <?php } ?>
-
         </section>
-        <!-- /case -->
-
 	    <?php get_template_part( '/contents/content', 'form'); ?>
-
     </main>
-
-    <!-- circle -->
     <div class="circle circle_semi circle_mobile" style="top: 564px; right: 60vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_min circle_mobile" style="top: 1521px; left: 44vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_min circle_mobile" style="top: 2603px; left: 44vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_min circle_mobile" style="top: 3198px; left: 44vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_semi circle_mobile" style="top: 3572px; right: 60vw"></div>
-    <!-- /circle -->
-
-    <!-- circle -->
     <div class="circle circle_2 circle_desktop" style="top: 377px; left: 15vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_min circle_desktop" style="top: 1788px; left: 48vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_desktop" style="top: 1865px; left: 70vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_min circle_desktop" style="top: 3034px; left: 48vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_min circle_desktop" style="top: 4044px; left: 48vw"></div>
-    <!-- /circle -->
-    <!-- circle -->
     <div class="circle circle_2 circle_desktop" style="top: 4334px; left: 10vw"></div>
-    <!-- /circle -->
-
 <?php get_footer();

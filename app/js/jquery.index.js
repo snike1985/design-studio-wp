@@ -6,6 +6,9 @@
         $('.instagramm-slider').each( function() {
             var curElem = $(this),
                 limit = curElem.data('limit'),
+                clientId = curElem.data('client-id'),
+                userId = curElem.data('user-id'),
+                accessToken = curElem.data('access-token'),
                 feed = new Instafeed({
                 get: 'user',
                 clientId: clientId,

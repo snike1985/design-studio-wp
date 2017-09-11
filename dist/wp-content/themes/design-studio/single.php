@@ -29,49 +29,25 @@ if(!empty($previous_post)) {
 				</a>';
 }
 ?>
-
 	<main class="site__content">
-
-		<!-- article -->
 		<section class="article">
-
 			<?= $post_image; ?>
-
-			<!-- article_wrapt -->
 			<div class="article__wrap">
-
-				<!-- article__info -->
 				<div class="article__info">
-
 					<?= $post_item_tags; ?>
-
 					<data value="<?= get_the_time('Y-m-d'); ?>"><?= get_the_time('F d, Y'); ?></data>
 				</div>
-				<!-- /article__info -->
-
-				<!-- article__content -->
 				<div class="article__content">
-
 					<h1><?= get_the_title($post->ID); ?></h1>
-
 					<?php the_content($post->ID); ?>
-
 				</div>
-				<!-- /article__content -->
-
 			</div>
-			<!-- /article__wrap -->
-
             <?php if($next_post_string || $previous_post_string){ ?>
 			<nav class="article__pagination">
 				<?= $next_post_string.$previous_post_string; ?>
 			</nav>
 			<?php } ?>
-
 		</section>
-		<!-- /article -->
-
         <?php get_template_part( '/contents/content', 'form'); ?>
-
 	</main>
 <?php get_footer();

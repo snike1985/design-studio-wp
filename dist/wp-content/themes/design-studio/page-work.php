@@ -52,40 +52,21 @@ if ($posts) {
 }
 ?>
 	<main class="site__content">
-
 		<section class="works works_isotope">
-
             <strong class="works__title"><?= get_the_title($post_id); ?></strong>
-
 			<div class="works__filter">
 				<div class="works__filter-item" data-filter="*">all</div>
                 <?= $category_string; ?>
 			</div>
-
 			<div class="works__list">
-
 				<?= $work_string; ?>
-
 			</div>
-
 			<span class="works__scroll-down">SCROLL DOWN</span>
-
 		</section>
-
 		<?php get_template_part( '/contents/content', 'form'); ?>
-
 	</main>
-
-    <!-- circle -->
     <span class="circle circle_middle circle_mobile" style="top: 95vh; left: 41vw"></span>
-    <!-- /circle -->
-
-    <!-- circle -->
     <span class="circle circle_desktop" style="top: 50vh; left: 65vw"></span>
-    <!-- /circle -->
-
-    <!-- circle -->
     <span class="circle circle_desktop circle_min" style="top: 150vh; left: 45vw"></span>
-    <!-- /circle -->
 <?php
 get_footer();

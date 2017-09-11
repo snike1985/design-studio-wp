@@ -81,31 +81,17 @@ if ($posts) {
 }
 ?>
 <main class="site__content">
-
     <section class="blog">
-
         <strong class="blog__title"><?= get_the_title($post_id); ?></strong>
-
         <nav class="blog__menu">
-
             <a href="<?= get_permalink($post_id); ?>" class="blog__menu-item<?= $active_category; ?>">All</a>
-
 			<?= $category_string; ?>
-
         </nav>
-
         <div class="blog__wrap">
-
 		<?= $post_string; ?>
-
         </div>
-
     </section>
-
 	<?php get_template_part( '/contents/content', 'form'); ?>
-
 </main>
-
 <span class="circle circle_desktop" style="top: 80vh; right: 73vw"></span>
-
 <span class="circle circle_min circle_mobile" style="top: 469px; left: 44vw"></span>

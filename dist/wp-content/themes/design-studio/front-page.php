@@ -172,65 +172,38 @@ if(!empty($testimonials) && false) {
                         </div>
                     </div>';
 	}
-	$testimonials_string .= '</div><div class="swiper-pagination"></div></div></div>';
+	$testimonials_string .= '</div></div><div class="swiper-pagination"></div></div>';
 }
 
 get_header();
 ?>
     <main class="site__content">
-
         <span class="site__create-by">by Artem Gorodetsky</span>
-
         <section class="hero">
-
             <div class="hero__description">
-
                 <?= $logo.$titles_hero_string.$title_button_hero; ?>
-
             </div>
-
             <div class="hero__layout" data-text="<?= get_field('title_background', $post_id); ?>">
-
                 <?= $hero_gadgets_string.$hero_list_string; ?>
-
             </div>
-
             <span class="hero__scroll-down">SCROLL DOWN</span>
-
         </section>
-
         <section class="works">
-
             <?= $title_work.$work_string.$title_button_work; ?>
-
         </section>
-
         <section class="doing">
-
             <?= $doing_subtitle; ?>
-
             <div class="doing__head">
-
                 <?= $doing_title_string.$doing_list_string; ?>
-
             </div>
-
             <div class="doing__content">
-
                 <?= $doing_content_subtitle.get_field('doing_content', $post_id).$title_button_doing; ?>
-
             </div>
-
         </section>
-
         <section class="clients">
-
             <div class="clients__content">
-
                 <?= $titles_clients_string.$clients_tabs_string.$title_button_clients; ?>
-
             </div>
-
             <div class="clients__map">
                 <span class="clients__map-point show"></span>
                 <span class="clients__map-point show"></span>
@@ -246,22 +219,11 @@ get_header();
                 <span class="clients__map-point show"></span>
                 <?= $clients_map; ?>
             </div>
-
         </section>
-
         <?= $testimonials_string; ?>
-
       <?php get_template_part( '/contents/content', 'form'); ?>
-
     </main>
-
-    <!-- circle -->
     <span class="circle" style="top: 100vh; left: 70vw"></span>
-    <!-- /circle -->
-
-    <!-- circle -->
     <span class="circle" style="top: 280vh; left: 50vw"></span>
-    <!-- /circle -->
-
 <?php
 get_footer();
