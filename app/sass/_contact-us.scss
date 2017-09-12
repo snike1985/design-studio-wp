@@ -2,6 +2,14 @@
 .contact-us {
   padding: 0 20px;
   text-align: center;
+  transform: translate(0, 100px);
+  opacity: 0;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+
+  &.is-show {
+    transform: translate(0,0);
+    opacity: 1;
+  }
 
   &__title {
     display: block;

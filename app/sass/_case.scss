@@ -491,6 +491,18 @@
 
     &__pagination {
 
+      &:after {
+        @include absoluteCenter();
+        height: 1px;
+        width: 2px;
+        opacity: 0.1;
+        background-color: #3F4551;
+        transition: height .3s ease-in-out;
+        content: '';
+      }
+
+      &.is-show:after { height: 100% }
+
       a,
       a:visited {
         height: 139px;
@@ -509,10 +521,12 @@
 
       a.case__pagination-prev {
         padding-left: 144px;
+        background-color: transparent;
       }
 
       a.case__pagination-next {
         padding-right: 144px;
+        background-color: transparent;
       }
     }
 

@@ -11,43 +11,43 @@
   &.circle_min {
     width: 40px;
     height: 40px;
-    border: 10px solid #E2E3E4;
+    border-width: 10px;
   }
 
   &.circle_little {
     width: 57px;
     height: 57px;
-    border: 10px solid #E2E3E4;
+    border-width: 10px;
   }
 
   &.circle_medium{
     width: 117px;
     height: 117px;
-    border: 20px solid #E2E3E4;
+    border-width: 20px;
   }
 
   &.circle_semi {
     width: 180px;
     height: 180px;
-    border: 40px solid #E2E3E4;
+    border-width: 40px;
   }
 
   &.circle_middle {
     width: 318px;
     height: 318px;
-    border: 59px solid #E2E3E4;
+    border-width: 59px;
   }
 
   &.circle_2 {
     height: 361px;
     width: 361px;
-    border: 99px solid #E2E3E4;
+    border-width: 99px;
   }
 
   &.circle_big {
     height: 631px;
     width: 631px;
-    border: 99px solid #E2E3E4;
+    border-width: 99px;
   }
 
   &.circle_desktop { display: none }

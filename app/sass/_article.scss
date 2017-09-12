@@ -139,13 +139,16 @@
     position: relative;
 
     &:after {
-      @include absoluteCenterX();
-      height: 100%;
+      @include absoluteCenter();
+      height: 1px;
       width: 2px;
       opacity: 0.1;
       background-color: #3F4551;
+      transition: height .3s ease-in-out;
       content: '';
     }
+
+    &.is-show:after { height: 100% }
 
     a,
     a:visited {

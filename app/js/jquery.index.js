@@ -488,7 +488,7 @@
                     }
                 } );
 
-                $('.circle').each( function() {
+                $('.circle').each( function(i) {
                     var curElem = $(this),
                         curTop = curElem.offset().top,
                         curHeight = curElem.height(),
@@ -498,10 +498,18 @@
 
                         if ( curTop < winHeight ) {
                             _paralax( curElem, 0, scrollTop, curKoef);
-                            _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                            if ( i % 2 == 0 ) {
+                                _blure(curElem, 7 - 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                            } else {
+                                _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                            }
                         } else {
                             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                            _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                            if ( i % 2 == 0 ) {
+                                _blure(curElem, 7 - 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                            } else {
+                                _blure(curElem, 10*(scrollTop + winHeight*.8 - curTop)/winHeight);
+                            }
                         }
                     }
                 } );
@@ -566,6 +574,38 @@
                             _paralax( curElem, 0, scrollTop, curKoef);
                         } else {
                             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.contacts__24hours').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = -.3;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, 0, scrollTop, curKoef);
+                        } else {
+                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                        }
+                    }
+                } );
+
+                $('.contacts__form').each( function() {
+                    var curElem = $(this),
+                        curTop = curElem.offset().top,
+                        curHeight = curElem.height(),
+                        curKoef = -.2;
+
+                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
+
+                        if ( curTop < winHeight ) {
+                            _paralax( curElem, scrollTop, 0, curKoef);
+                        } else {
+                            _paralax( curElem, (scrollTop - (curTop - winHeight)), 0, curKoef);
                         }
                     }
                 } );
