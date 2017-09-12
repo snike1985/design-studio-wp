@@ -216,15 +216,22 @@
 
         //private properties
         var _obj = obj,
-            _btn = _obj.find( '.menu__btn' );
+            _objWrap = _obj.find('.menu__wrap');
 
         //private methods
         var _addEvents = function() {
 
-                _btn.on({
+                _obj.on({
                     'click': function() {
 
                         _obj.toggleClass('open');
+                    }
+                });
+
+                _objWrap.on({
+                    'click': function(e) {
+
+                        e.stopPropagation();
                     }
                 });
 
@@ -259,21 +266,30 @@
 
                 _btnOpen.on({
                     'click': function() {
-
                         _obj.addClass('open');
+                    }
+                });
+
+                _obj.on({
+                    'click': function() {
+                        _obj.removeClass('open');
+                    }
+                });
+
+                _scrollWrap.on({
+                    'click': function(e) {
+                        e.stopPropagation();
                     }
                 });
 
                 _btnClose.on({
                     'click': function() {
-
                         _obj.removeClass('open');
                     }
                 });
 
                 $( window ).on({
                     'resize': function() {
-
                         _scrollWrap.perfectScrollbar('update');
                     }
                 });
