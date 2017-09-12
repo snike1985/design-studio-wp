@@ -248,8 +248,11 @@
             _btnClose = _obj.find( '.request__close' ),
             _scrollWrap = _obj.find('.request__wrap'),
             _range = _obj.find('input[type=range]'),
+            _rangeMin = _range.attr('min'),
+            _rangeMax = _range.attr('max'),
             _curValue = _obj.find('.request__range'),
-            _radioElems = _obj.find('.wpcf7-list-item');
+            _radioElems = _obj.find('.wpcf7-list-item'),
+            _fontSize = 30;
 
         //private methods
         var _addEvents = function() {
@@ -302,6 +305,7 @@
             },
             _changeValue = function (val) {
                 _curValue.text(val.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,'));
+                _curValue.css({ 'font-size': _fontSize*val/(_rangeMax - _rangeMin) + 15 + 'px' });
             },
             _initScroll = function() {
                 _scrollWrap.perfectScrollbar();
