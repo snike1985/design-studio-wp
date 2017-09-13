@@ -501,7 +501,16 @@
         content: '';
       }
 
-      &.is-show:after { height: 100% }
+      &.is-show {
+
+        &:after { height: 100% }
+
+        a.case__pagination-prev,
+        a.case__pagination-next {
+          transform: translate(0);
+          opacity: 1;
+        }
+      }
 
       a,
       a:visited {
@@ -510,6 +519,8 @@
         font-size: 16px;
         line-height: 25px;
         letter-spacing: 0;
+        opacity: 0;
+        transition: transform .3s ease-in-out, opacity .3s ease-in-out;
       }
 
       span {
@@ -522,11 +533,13 @@
       a.case__pagination-prev {
         padding-left: 144px;
         background-color: transparent;
+        transform: translate(-100%,0);
       }
 
       a.case__pagination-next {
         padding-right: 144px;
         background-color: transparent;
+        transform: translate(100%,0);
       }
     }
 

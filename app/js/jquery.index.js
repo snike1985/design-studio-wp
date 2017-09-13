@@ -942,7 +942,7 @@
 
                                             setTimeout(function () {
                                                 curElem.addClass('show is-show')
-                                            }, 300)
+                                            }, 100);
 
                                             if ( count % 2 == 0 ) {
                                                 curElem.addClass('even');
@@ -955,7 +955,11 @@
                             } else {
                                 setTimeout(function () {
                                     _items.removeClass('hide');
-                                    _items.removeClass('to-hide');
+                                    _items.addClass('to-show');
+
+                                    setTimeout(function () {
+                                        _items.addClass('show is-show')
+                                    }, 100);
                                 }, 300);
                             }
                         }
