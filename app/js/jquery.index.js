@@ -863,6 +863,7 @@
             _initSlider = function() {
                 _swiper = new Swiper(_slider, {
                     pagination: _pagination,
+                    paginationClickable: true,
                     loop: true,
                     spaceBetween: 0,
                     effect: 'cube',
