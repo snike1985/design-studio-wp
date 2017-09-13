@@ -990,6 +990,7 @@
                     'load': function () {
                         _initFilter();
                         _filterItems.eq(0).addClass('active');
+                        _items.addClass('show is-show');
                     },
                     'resize': function () {
                         _filter.perfectScrollbar('update');
@@ -1006,12 +1007,15 @@
 
                             var filterData = curElem.data('filter').slice(1);
 
+                            _items.removeClass('odd');
+                            _items.removeClass('even');
+                            _items.removeClass('show is-show');
+                            _items.addClass('hide');
+
                             if (filterData.length) {
-                                _items.slideUp(300);
 
                                 setTimeout(function () {
-                                    _items.removeClass('odd');
-                                    _items.removeClass('even');
+                                    _items.addClass('hide');
 
                                     var count = 0;
                                     _items.each(function () {
@@ -1019,7 +1023,12 @@
 
                                         if (curElem.hasClass(filterData)) {
                                             count++;
-                                            curElem.slideDown(300);
+                                            curElem.removeClass('hide');
+                                            curElem.addClass('to-show');
+
+                                            setTimeout(function () {
+                                                curElem.addClass('show is-show')
+                                            }, 300)
 
                                             if ( count % 2 == 0 ) {
                                                 curElem.addClass('even');
@@ -1028,30 +1037,12 @@
                                             }
                                         }
                                     });
-                                    _items.removeClass('is-hide');
-                                }, 350)
+                                }, 300);
                             } else {
-                                _items.slideUp(300);
-
                                 setTimeout(function () {
-                                    _items.removeClass('odd');
-                                    _items.removeClass('even');
-
-                                    var count = 0;
-                                    _items.each(function () {
-                                        var curElem = $(this);
-
-                                        count++;
-                                        curElem.slideDown(300);
-
-                                        if ( count % 2 == 0 ) {
-                                            curElem.addClass('even');
-                                        } else {
-                                            curElem.addClass('odd');
-                                        }
-                                    });
-                                    _items.removeClass('is-hide');
-                                }, 350)
+                                    _items.removeClass('hide');
+                                    _items.removeClass('to-hide');
+                                }, 300);
                             }
                         }
                     }
