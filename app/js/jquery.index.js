@@ -833,6 +833,7 @@
         var _obj = obj,
             _slider = _obj.find('.testimonials__slider'),
             _sliderItems = _slider.find('.testimonials__item'),
+            _sliderPagination = _obj.find('.testimonials__pagination'),
             _hm = new Hammer(_slider[0]),
             _wasSwipe = false,
             _canSwipe = true,
@@ -841,9 +842,9 @@
         //private methods
         var _addEvents = function() {
 
-                $(window).on({
-                    'resize': function () {
-
+                $('.testimonials__pagination-item').on({
+                    'click': function () {
+                        
                     }
                 });
 
@@ -874,8 +875,23 @@
                 });
 
             },
+            _createPagination = function() {
+                for (var i = 0; i < _sliderItems.length; i++) {
+
+                    if (_sliderItems.eq(i).hasClass('active')) {
+                        _sliderPagination.append('<span class="testimonials__pagination-item active"></span>');
+                    } else {
+                        _sliderPagination.append('<span class="testimonials__pagination-item"></span>');
+                    }
+                }
+            },
+            _setActivePagination = function() {
+                $('.testimonials__pagination-item').eq(_activeIndex).addClass('active');
+            },
+            _removeActivePagination = function() {
+                $('.testimonials__pagination-item').removeClass('active');
+            },
             _prevSlide = function() {
-                console.log('prev');
                 _sliderItems[_activeIndex].classList.remove('active');
                 _sliderItems[_activeIndex].classList.add('to-next');
 
@@ -899,13 +915,15 @@
                         _sliderItems[_sliderItems.length - 1].classList.add('active');
                         _activeIndex = _sliderItems.length - 1;
                     }
+                    _removeActivePagination();
+                    _setActivePagination();
+
                     setTimeout(function () {
                         _canSwipe = true;
                     }, 350);
                 }, 300);
             },
             _nextSlide = function() {
-                console.log('next');
                 _sliderItems[_activeIndex].classList.remove('active');
                 _sliderItems[_activeIndex].classList.add('to-prev');
 
@@ -934,15 +952,18 @@
                     } else {
                         _sliderItems[0].classList.add('next');
                     }
+                    _removeActivePagination();
+                    _setActivePagination();
 
                     setTimeout(function () {
                         _canSwipe = true;
                     }, 350);
-                }, 300)
+                }, 300);
             },
             _init = function() {
                 _sliderItems[_activeIndex].classList.add('active');
                 _sliderItems[_activeIndex + 1].classList.add('next');
+                _createPagination();
                 _addEvents();
             };
 
