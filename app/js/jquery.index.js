@@ -225,6 +225,12 @@
                     'click': function() {
 
                         _obj.toggleClass('open');
+
+                        if (_obj.hasClass('open')) {
+                            $('.site')[0].obj.setCanUseScroll(false);
+                        } else {
+                            $('.site')[0].obj.setCanUseScroll(true);
+                        }
                     }
                 });
 
@@ -266,13 +272,14 @@
 
                 _btnOpen.on({
                     'click': function() {
-                        _obj.addClass('open');
+                       _open();
+                       return false;
                     }
                 });
 
                 _obj.on({
                     'click': function() {
-                        _obj.removeClass('open');
+                       _close();
                     }
                 });
 
@@ -284,7 +291,8 @@
 
                 _btnClose.on({
                     'click': function() {
-                        _obj.removeClass('open');
+                        _close();
+                        return false;
                     }
                 });
 
@@ -308,6 +316,14 @@
                     }
                 });
 
+            },
+            _open = function () {
+                _obj.addClass('open');
+                $('.site')[0].obj.setCanUseScroll(false);
+            },
+            _close = function () {
+                _obj.removeClass('open');
+                $('.site')[0].obj.setCanUseScroll(true);
             },
             _createNiceRadio = function () {
 
@@ -373,6 +389,7 @@
                             _siteScroll( event );
 
                         }
+                        return false;
                     },
                     'DOMMouseScroll': function( event ) {
                         if ( _canUseSmoothScroll ) {
@@ -381,6 +398,7 @@
                             _siteScroll( event );
 
                         }
+                        return false;
                     }
                 } );
 
@@ -669,6 +687,7 @@
 
         //public methods
         _self.setCanUseScroll = function ( param ) {
+            console.log('setCanUse');
             _canUseSmoothScroll = param;
         };
 
