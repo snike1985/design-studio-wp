@@ -615,22 +615,6 @@
                     }
                 } );
 
-                $('.contacts__form').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = -.2;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, scrollTop, 0, curKoef);
-                        } else {
-                            _paralax( curElem, (scrollTop - (curTop - winHeight)), 0, curKoef);
-                        }
-                    }
-                } );
-
                 $('.blog__title').each( function() {
                     var curElem = $(this),
                         curTop = curElem.offset().top,

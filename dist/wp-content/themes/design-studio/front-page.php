@@ -65,7 +65,7 @@ if(!empty($work)) {
         if($counter > 1) {
             $class = ' mobile-hide';
         }
-	    $work_string .= '<a href="'.get_permalink($row).'" class="works__item show'.$class.'"><img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_post_meta($row, '_wp_attachment_image_alt', true).'"></a>';
+	    $work_string .= '<a href="'.get_permalink($row).'" class="works__item show'.$class.'"><span class="works__item-pic"><img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_post_meta($row, '_wp_attachment_image_alt', true).'"></span></a>';
     $counter++;
     }
 	$work_string .= '</div>';
@@ -223,7 +223,11 @@ get_header();
         <?= $testimonials_string; ?>
       <?php get_template_part( '/contents/content', 'form'); ?>
     </main>
-    <span class="circle" style="top: 100vh; left: 70vw"></span>
-    <span class="circle" style="top: 280vh; left: 50vw"></span>
+    <span class="circle circle_little circle_mobile" style="top: 535px; left: 41vw"></span>
+    <span class="circle circle_middle circle_mobile" style="top: 769px; left: 42vw"></span>
+    <span class="circle circle_semi circle_mobile" style="top: 1811px; left: 58vw"></span>
+    <span class="circle circle_medium circle_desktop" style="top: 678px; left: 47vw"></span>
+    <span class="circle circle_desktop" style="top: 100vh; left: 70vw"></span>
+    <span class="circle circle_desktop" style="top: 280vh; left: 50vw"></span>
 <?php
 get_footer();
