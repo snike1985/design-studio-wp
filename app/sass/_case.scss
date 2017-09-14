@@ -427,11 +427,22 @@
 
       &-prev,
       &-next {
-        height: 31.06px;
-        width: 112.97px;
+        height: 31px;
+        width: 93px;
         margin-top: -15.5px;
+        background-image: url("../img/arrow-desctop.svg");
+        background-position: right center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: opacity .3s ease-in-out,
+                    width .3s ease-in-out,
+                    left .3s ease-in-out,
+                    right .3s ease-in-out;
+
+        svg { display: none }
 
         &:hover {
+          width: 113px;
 
           &:before {
             left: 76px;
@@ -442,7 +453,7 @@
       }
 
       &-prev {
-        left: 53px;
+        left: 76px;
 
         &:before {
           position: absolute;
@@ -463,9 +474,13 @@
           pointer-events: none;
           @include subtitle-medium();
         }
+
+        &:hover { left: 53px }
+
+        svg.desktop-view { left: 0 }
       }
       &-next {
-        right: 53px;
+        right: 76px;
 
         &:before {
           position: absolute;
@@ -486,10 +501,35 @@
           pointer-events: none;
           @include subtitle-medium();
         }
+
+        &:hover { right: 53px }
+
+        svg.desktop-view { right: 0 }
       }
     }
 
     &__pagination {
+
+      &:after {
+        @include absoluteCenter();
+        height: 1px;
+        width: 2px;
+        opacity: 0.1;
+        background-color: #3F4551;
+        transition: height .3s ease-in-out;
+        content: '';
+      }
+
+      &.is-show {
+
+        &:after { height: 100% }
+
+        a.case__pagination-prev,
+        a.case__pagination-next {
+          transform: translate(0);
+          opacity: 1;
+        }
+      }
 
       a,
       a:visited {
@@ -498,6 +538,8 @@
         font-size: 16px;
         line-height: 25px;
         letter-spacing: 0;
+        opacity: 0;
+        transition: transform .3s ease-in-out, opacity .3s ease-in-out;
       }
 
       span {
@@ -509,10 +551,14 @@
 
       a.case__pagination-prev {
         padding-left: 144px;
+        background-color: transparent;
+        transform: translate(-100%,0);
       }
 
       a.case__pagination-next {
         padding-right: 144px;
+        background-color: transparent;
+        transform: translate(100%,0);
       }
     }
 
