@@ -95,8 +95,8 @@ if($logo) {
             </div>
             <?= $content.$logo; ?>
             <?php if($next_post_string || $previous_post_string){ ?>
-            <nav class="case__pagination">
-	            <?= $next_post_string.$previous_post_string; ?>
+            <nav class="case__pagination show">
+	            <?= $previous_post_string.$next_post_string; ?>
             </nav>
             <?php } ?>
         </section>

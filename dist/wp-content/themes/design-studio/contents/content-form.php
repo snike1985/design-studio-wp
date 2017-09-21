@@ -28,7 +28,7 @@ if($title_form) {
 }
 if(!is_page(14)){
 ?>
-<div class="contact-us">
+<div class="contact-us show">
 	<?= $title_form.get_field('content_form', $contact_id); ?>
 	<div class="contact-us__form">
 		<?= do_shortcode('[contact-form-7 id="86" title="Contact"]'); ?>

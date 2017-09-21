@@ -69,16 +69,18 @@ if (!empty($work)) {
         }
         $work_string .= '
         <a href="'.get_permalink($row).'" class="works__item show">
-					<img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_post_meta($row, '_wp_attachment_image_alt', true).'">
-					<div class="works__item-footer">
-						<ul class="works__item-text">
-							'.get_the_excerpt($row).'
-						</ul>
-						<ul class="works__item-data">
-							'.$work_item_tags.'
-						</ul>
-					</div>
-				</a>';
+            <span class="works__item-pic">
+                <img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_post_meta($row, '_wp_attachment_image_alt', true).'">
+            </span>
+            <div class="works__item-footer">
+                <ul class="works__item-text">
+                    '.get_the_excerpt($row).'
+                </ul>
+                <ul class="works__item-data">
+                    '.$work_item_tags.'
+                </ul>
+            </div>
+        </a>';
     }
 }
 ?>

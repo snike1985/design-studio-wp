@@ -43,8 +43,8 @@ if(!empty($previous_post)) {
 				</div>
 			</div>
             <?php if($next_post_string || $previous_post_string){ ?>
-			<nav class="article__pagination">
-				<?= $next_post_string.$previous_post_string; ?>
+			<nav class="article__pagination show">
+				<?= $previous_post_string.$next_post_string; ?>
 			</nav>
 			<?php } ?>
 		</section>

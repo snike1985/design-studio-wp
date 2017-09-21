@@ -60,7 +60,7 @@ function add_js() {
 	wp_register_script('swiper', get_template_directory_uri() . '/assets/js/vendors/swiper.jquery.min.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/swiper.jquery.min.js'), true);
 	wp_register_script('ScrollToPlugin', get_template_directory_uri() . '/assets/js/vendors/ScrollToPlugin.min.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/ScrollToPlugin.min.js'), true);
 	wp_register_script('TweenMax', get_template_directory_uri() . '/assets/js/vendors/TweenMax.min.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/TweenMax.min.js'), true);
-	wp_register_script('isotope', get_template_directory_uri() . '/assets/js/vendors/isotope.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/isotope.js'), true);
+//	wp_register_script('isotope', get_template_directory_uri() . '/assets/js/vendors/isotope.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/isotope.js'), true);
 	wp_register_script('perfect-scrollbar', get_template_directory_uri() . '/assets/js/vendors/perfect-scrollbar.jquery.min.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/perfect-scrollbar.jquery.min.js'), true);
 	wp_register_script('instafeed', get_template_directory_uri() . '/assets/js/vendors/instafeed.min.js', false, filemtime(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..') . '/assets/js/vendors/instafeed.min.js'), true);
 
@@ -93,7 +93,7 @@ function add_js() {
 	}
 
 	if(is_page(5)) {
-		wp_enqueue_script('isotope');
+//		wp_enqueue_script('isotope');
 
 		wp_enqueue_style('works-page');
 	}
