@@ -25,8 +25,7 @@
 
   .logo {
     display: block;
-    opacity: 1 !important;
-    visibility: visible !important;
+    top: 0;
   }
 
   &.open {
@@ -202,7 +201,7 @@
   .social {
 
     &__item {
-      margin: 0 38px 0 0;
+      margin: 0 10px 0 0;
     }
   }
 }
@@ -243,6 +242,11 @@
         font-size: 48px;
         line-height: 67px;
       }
+    }
+
+    .social {
+
+      &__item { margin: 0 19px 0 0 }
     }
   }
 }
