@@ -23,7 +23,10 @@
     backface-visibility: hidden;
   }
 
-  .logo { display: block }
+  .logo {
+    display: block;
+    top: 0;
+  }
 
   &.open {
     width: 100%;
