@@ -140,8 +140,6 @@
     margin-bottom: 9px;
     margin-left: -30px;
     padding-left: 44px;
-    font-size: 16px;
-    line-height: 23px;
     white-space: nowrap;
     @include subtitle-bold();
 
@@ -152,8 +150,10 @@
       justify-content: center;
       height: 24px;
       min-width: 38px;
-      padding: 0 12px;
+      padding: 1px 12px;
       margin: 0 6px 11px 0;
+      font-size: 16px;
+      line-height: 23px;
       border-radius: 100px;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -380,7 +380,7 @@
       margin-bottom: 88px;
 
       &-item,
-      &-item:visited { padding: 4px 12px 0 }
+      &-item:visited { padding: 2px 12px 0 }
     }
 
     &__title {
