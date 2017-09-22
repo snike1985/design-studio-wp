@@ -24,7 +24,7 @@ if( $locations && isset($locations[ $menu_name ]) ){
         if (is_page( $menu_item->object_id )) {
           $active = ' active ';
         }
-		$menu_list .= '<a href="'.$perm.'" class="menu__links-item'.$active.'">'.$menu_item->title.'</a>';
+		$menu_list .= '<a href="'.$perm.'" class="menu__links-item'.$active.'"><span>'.$menu_item->title.'</span></a>';
 	}
 	$menu_list .= '</div>';
 }
