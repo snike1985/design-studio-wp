@@ -60,6 +60,7 @@
       text-align: center;
       box-sizing: border-box;
       border-radius: 0;
+      caret-color: #0200FF;
       @include main-font();
 
       &::-webkit-input-placeholder {

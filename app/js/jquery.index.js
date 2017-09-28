@@ -364,7 +364,8 @@
             _obj = obj,
             _window = $( window ),
             _canUseSmoothScroll = true,
-            _canMove = true;
+            _canMove = true,
+            _loader = $('.loader');
 
         //private methods
         var _addEvents = function() {
@@ -378,6 +379,7 @@
                         var scrollTop = $(window).scrollTop();
                         _changeCanMove();
                         _move( scrollTop );
+                        _loader.addClass('hide');
                     },
                     'resize': function() {
                         _changeCanMove();

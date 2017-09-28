@@ -34,7 +34,7 @@
 
         img {
           transform: scale(1.3);
-          //transition-duration: 2s;
+          transition-duration: 10s;
         }
       }
 
@@ -121,9 +121,6 @@
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 0 0 11px;
   }
 
@@ -212,7 +209,7 @@
       width: 100%;
       min-height: 100%;
       z-index: 2;
-      transition: transform 10s linear;
+      transition: transform .3s linear;
     }
 
     &.is-show {
@@ -404,7 +401,6 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
-      flex-direction: row;
     }
 
     &__item {
@@ -419,7 +415,7 @@
 
       &:hover img {
         transform: scale(1.3);
-        //transition-duration: 2s;
+        transition-duration: 10s;
       }
 
       &.mobile-hide { display: block }

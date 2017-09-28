@@ -99,7 +99,10 @@
         line-height: 27px;
       }
 
-      .btn { display: inline-flex }
+      .btn {
+        display: inline-flex;
+        left: 3px;
+      }
     }
 
     &__layout {
@@ -147,4 +150,3 @@
   }
 }
 /*---------- /hero ---------*/
-
