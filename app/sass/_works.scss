@@ -82,14 +82,6 @@
         }
       }
 
-      &.odd {
-        top: -15px;
-      }
-
-      &.even {
-        top: 15px;
-      }
-
       &-footer {
         padding: 14px 14px 14px 18px;
       }
@@ -311,7 +303,7 @@
 
       .works__list {
         position: relative;
-        top: -47px;
+        top: -36px;
         max-width: 935px;
         margin: 0 auto;
         left: 2px;

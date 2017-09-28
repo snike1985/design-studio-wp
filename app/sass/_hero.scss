@@ -82,11 +82,6 @@
 }
 @media (min-width: $tablet-landscape) {
   .hero {
-
-  }
-}
-@media (min-width: $desktop) {
-  .hero {
     display: flex;
     justify-content: space-between;
     height: 737px;

@@ -16,7 +16,7 @@
     height: 100%;
     z-index: 1;
     content: '';
-    background-color: rgba(2,0,255,0.7);
+    background-color: rgba(2, 0, 255, 0.7);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translate(100%, 0);
     transition-delay: .2s;
@@ -58,7 +58,9 @@
           opacity: 0;
         }
 
-        span { top: 0 }
+        span {
+          top: 0
+        }
       }
     }
   }
@@ -96,7 +98,9 @@
     &:hover {
 
       &:before,
-      &:after { background-color: #0200FF }
+      &:after {
+        background-color: #0200FF
+      }
     }
   }
 
@@ -174,23 +178,25 @@
     font-size: 16px;
     line-height: 25px;
 
-    .wpcf7-list-item-label { display: none }
+    .wpcf7-list-item-label {
+      display: none
+    }
 
     input[type=text],
     input[type=email] {
-      height: 27px;
+      height: 26px;
       width: 100%;
       margin-bottom: 32px;
-      border-color: #979797;
+      border-color: rgba(69, 69, 81, .2);;
       border-style: solid;
-      border-width: 0 0 2px 0;
+      border-width: 0 0 3px 0;
       color: #3F4551;
       background: transparent;
       font-size: 16px;
       line-height: 25px;
       box-sizing: border-box;
       border-radius: 0;
-      @include main-font-bold();
+      @include main-font();
 
       &::-webkit-input-placeholder {
         color: #AAABAF;
@@ -215,7 +221,7 @@
       margin-top: 15px;
     }
 
-    $track-color: rgba(63,69,81,.1) !default;
+    $track-color: rgba(63, 69, 81, .1) !default;
     $thumb-color: #0200FF !default;
 
     $thumb-radius: 20px !default;
@@ -320,16 +326,19 @@
 
   }
 }
+
 @media (min-width: $tablet-portrait) {
   .request {
 
   }
 }
+
 @media (min-width: $tablet-landscape) {
   .request {
 
   }
 }
+
 @media (min-width: $desktop) {
   .request {
 
@@ -338,9 +347,15 @@
       right: 50px;
 
       &:before,
-      &:after { height: 3px }
-      &:before { bottom: calc(50% - 1px) }
-      &:after { top: calc(50% - 1px) }
+      &:after {
+        height: 3px
+      }
+      &:before {
+        bottom: calc(50% - 1.5px)
+      }
+      &:after {
+        top: calc(50% - 1.5px)
+      }
     }
 
     &__title {
@@ -352,11 +367,25 @@
       }
     }
 
-    &__wrap { padding: 144px 125px 51px 139px }
+    &__wrap {
+      padding: 144px 125px 51px 139px
+    }
 
-    &__radio { padding: 25px 0 }
+    &__radio {
+      padding: 25px 0 28px;
 
-    &__range { padding: 6px 0 32px }
+      p {
+        margin-bottom: 14px;
+      }
+
+      .nice-radio {
+        margin-left: 3px
+      }
+    }
+
+    &__range {
+      padding: 6px 0 32px
+    }
 
     &__form {
       font-size: 16px;
@@ -370,8 +399,11 @@
       }
     }
 
-    .btn { width: auto }
+    .btn {
+      width: auto
+    }
   }
 }
+
 /*---------- /request ---------*/
 
