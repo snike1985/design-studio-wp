@@ -17,7 +17,7 @@
                 sortBy: 'most-recent',
                 resolution: 'low_resolution',
                 limit: limit,
-                template: '<a href="{{link}}" class="swiper-slide" style="background-image: url({{image}})"></a>',
+                template: '<a href="{{link}}" class="swiper-slide"><span style="background-image: url({{image}})"></span></a>',
                 after: function () {
                     setTimeout(function () {
                         new InstagrammSlider( curElem );
@@ -367,7 +367,8 @@
             _obj = obj,
             _window = $( window ),
             _canUseSmoothScroll = true,
-            _canMove = true;
+            _canMove = true,
+            _loader = $('.loader');
 
         //private methods
         var _addEvents = function() {
@@ -381,6 +382,7 @@
                         var scrollTop = $(window).scrollTop();
                         _changeCanMove();
                         _move( scrollTop );
+                        _loader.addClass('hide');
                     },
                     'resize': function() {
                         _changeCanMove();
@@ -421,6 +423,7 @@
                 if (!_canMove) {
                     translate = 'translate3d(0px, 0px)';
                 }
+
                 elem.css( {
                     'transform': translate
                 } );
@@ -451,26 +454,28 @@
                     }
                 } );
 
-                $('.works__item').each( function(i) {
+                $('.works').each( function() {
                     var curElem = $(this),
+                        items = curElem.find('.works__item'),
                         curTop = curElem.offset().top,
                         curHeight = curElem.height(),
                         curKoef = .05;
 
-                    if (!curElem.parents('.works_isotope').length) {
-                        if ( i % 2 == 0 ) {
+                    items.each( function() {
+                        var curItem = $(this);
+
+                        if (!curElem.parents('.works_isotope').length) {
                             curKoef = -curKoef;
-                        }
+                            if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
 
-                        if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                            if ( curTop < winHeight ) {
-                                _paralax( curElem, 0, scrollTop, curKoef);
-                            } else {
-                                _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
+                                if ( curTop < winHeight ) {
+                                    _paralax( curItem, 0, scrollTop, curKoef);
+                                } else {
+                                    _paralax( curItem, 0, scrollTop - (curTop - winHeight), curKoef);
+                                }
                             }
                         }
-                    }
+                    } );
                 } );
 
                 $('.team__title').each( function() {
