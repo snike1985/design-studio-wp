@@ -156,7 +156,7 @@ if($title_testimonials) {
 
 $testimonials = get_field('testimonials', $home_id);
 $testimonials_string = '';
-if(!empty($testimonials) && false) {
+if(!empty($testimonials)) {
 	$testimonials_string = '<div class="testimonials">'.$title_testimonials.'<div class="swiper-container"><div class="swiper-wrapper">';
 	foreach ($testimonials as $row) {
 		$testimonials_string .= '<div class="swiper-slide">

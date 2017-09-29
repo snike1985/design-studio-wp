@@ -74,8 +74,99 @@ if(is_front_page()) {
     <meta name="format-detection" content="address=no">
     <title>Title</title>
     <?php wp_head(); ?>
+    <style>
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background-color: #D1D2D4;
+        }
+        .loader.hide {
+            opacity: 0;
+            visibility: hidden;
+            -webkit-animation: hideLoader 1s 1 ease-in-out both;
+            animation: hideLoader 1s 1 ease-in-out both;
+        }
+        .loader__wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            transform: translate(-50%,-50%);
+        }
+        .loader__wrap div {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 100%;
+            background-color: #fff;
+            -webkit-animation: bouncedelay 1.4s infinite ease-in-out both;
+            animation: bouncedelay 1.4s infinite ease-in-out both;
+        }
+        .loader__wrap div.loader__one {
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+        }
+        .loader__wrap div.loader__two {
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+        }
+
+        @-webkit-keyframes bouncedelay {
+            0%, 80%, 100% { -webkit-transform: scale(0) }
+            40% { -webkit-transform: scale(1) }
+        }
+
+        @keyframes bouncedelay {
+            0%, 80%, 100% {
+                -webkit-transform: scale(0);
+                transform: scale(0)
+            }
+            40% {
+                transform: scale(1);
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @-webkit-keyframes hideLoader {
+            0% {
+                visibility: visible;
+                opacity: 1;
+            }
+            100% {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+
+        @keyframes hideLoader {
+            0% {
+                visibility: visible;
+                opacity: 1;
+            }
+            100% {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+
+    </style>
 </head>
 <body>
+<!-- loader -->
+<div class="loader">
+    <!-- loader__wrap -->
+    <div class="loader__wrap">
+        <div class="loader__one"></div>
+        <div class="loader__two"></div>
+        <div class="loader__three"></div>
+    </div>
+    <!-- /loader__wrap -->
+</div>
+<!-- /loader -->
 <div class="site <?= $class; ?>">
     <header class="site__header">
         <?= $logo; ?>
