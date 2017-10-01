@@ -38,6 +38,14 @@
         }
       }
 
+      &.odd {
+        right: -15px;
+      }
+
+      &.even {
+        right: 15px;
+      }
+
       &-wrap {
         position: absolute;
         top: 0;
@@ -167,10 +175,10 @@
     margin-bottom: 20px;
     z-index: 1;
     background-color: #fff;
-    top: -15px;
+    right: -15px;
 
     &:nth-child(even) {
-      top: 15px;
+      right: 15px;
     }
 
     &:before {
@@ -407,10 +415,12 @@
       overflow: hidden;
       position: relative;
       top: -32px;
+      right: auto;
       margin-bottom: 55px;
 
       &:nth-child(even) {
         top: 55px;
+        right: auto;
       }
 
       &:hover img {
