@@ -14,7 +14,7 @@
 
             var controller = new ScrollMagic.Controller();
             var scene = new ScrollMagic.Scene({
-                duration: '50%',
+                duration: '100%',
                 offset: 0,
                 triggerElement: '#hero',
                 triggerHook: 0
@@ -559,38 +559,6 @@
                     }
                 } );
 
-                $('.hero__gadgets').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .2;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
-                $('.hero__list').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = -.1;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
                 $('.hero__layout').each( function() {
                     var curElem = $(this),
                         curTop = curElem.offset().top,
@@ -606,22 +574,6 @@
                         }
                     }
                 } );
-
-                // $('.doing__head-list').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .04;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
 
                 $('.contacts__24hours').each( function() {
                     var curElem = $(this),
