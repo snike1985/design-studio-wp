@@ -3,6 +3,27 @@
 
     $(function(){
 
+        if ($('.hero').length) {
+
+            var timeline = new TimelineMax();
+            timeline.to('#path5', 1, {y: -100})
+                .to('#path3', 1, {y: -50}, .8)
+                .to('#path4', 1, {y: -50}, .5)
+                .to('#path2', 1.5, {x: 170, y: 170}, 1)
+                .to('#path1', 2, {x: -190, y: -190}, 1);
+
+            var controller = new ScrollMagic.Controller();
+            var scene = new ScrollMagic.Scene({
+                duration: '100%',
+                offset: 0,
+                triggerElement: '#hero',
+                triggerHook: 0
+            });
+            scene.setTween(timeline);
+            scene.setPin('.hero');
+            scene.addTo(controller);
+        }
+
         $('.instagramm-slider').each( function() {
             var curElem = $(this),
                 limit = curElem.data('limit'),
@@ -380,8 +401,9 @@
                     },
                     'load': function() {
                         var scrollTop = $(window).scrollTop();
+                        $('html, body').animate({scrollTop: 0},1);
                         _changeCanMove();
-                        _move( scrollTop );
+                        // _move( scrollTop );
                         _loader.addClass('hide');
                     },
                     'resize': function() {
@@ -540,38 +562,6 @@
                     }
                 } );
 
-                $('.hero__gadgets').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = .2;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
-                $('.hero__list').each( function() {
-                    var curElem = $(this),
-                        curTop = curElem.offset().top,
-                        curHeight = curElem.height(),
-                        curKoef = -.1;
-
-                    if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-
-                        if ( curTop < winHeight ) {
-                            _paralax( curElem, 0, scrollTop, curKoef);
-                        } else {
-                            _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                        }
-                    }
-                } );
-
                 $('.hero__layout').each( function() {
                     var curElem = $(this),
                         curTop = curElem.offset().top,
@@ -587,22 +577,6 @@
                         }
                     }
                 } );
-
-                // $('.doing__head-list').each( function() {
-                //     var curElem = $(this),
-                //         curTop = curElem.offset().top,
-                //         curHeight = curElem.height(),
-                //         curKoef = .04;
-                //
-                //     if ( ( scrollTop <= ( curTop + curHeight ) && ( ( winHeight + scrollTop ) >= curTop ) ) ) {
-                //
-                //         if ( curTop < winHeight ) {
-                //             _paralax( curElem, 0, scrollTop, curKoef);
-                //         } else {
-                //             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
-                //         }
-                //     }
-                // } );
 
                 $('.contacts__24hours').each( function() {
                     var curElem = $(this),
@@ -664,11 +638,12 @@
                     scrollTop = _window.scrollTop(),
                     finalScroll = scrollTop - parseInt( delta * scrollDistance );
 
-                TweenMax.to( _window, scrollTime, {
+                var tweenMax = new TweenMax.to( _window, scrollTime, {
                     scrollTo : { y: finalScroll, autoKill:true },
                     ease: Power1.easeOut,
                     overwrite: 5
                 });
+
             },
             _init = function() {
                 _obj[ 0 ].obj = _self;
