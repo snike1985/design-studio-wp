@@ -9,8 +9,8 @@
             timeline.to('#path5', 1, {y: -100})
                 .to('#path3', 1, {y: -50}, .8)
                 .to('#path4', 1, {y: -50}, .5)
-                .to('#path2', 1.5, {x: 170, y: 170}, 1)
-                .to('#path1', 2, {x: -190, y: -190}, 1);
+                .to('#path2', 1.5, {y: -110}, 1)
+                .to('#path1', 2, {y: -170}, 1);
 
             var controller = new ScrollMagic.Controller();
             var scene = new ScrollMagic.Scene({
