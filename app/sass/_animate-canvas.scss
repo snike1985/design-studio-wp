@@ -21,6 +21,7 @@
   .animate-canvas {
     display: block;
     @include absoluteCenterX();
+    transform: translateX(-50%) scale(.7);
     top: 20vh;
     width: 795px;
     height: 674px;
@@ -57,5 +58,21 @@
     }
   }
 }
+@media (min-width: $high-desktop) {
+  .animate-canvas {
+    transform: translateX(-50%) scale(1);
+  }
+}
 /*---------- /animate-canvas ---------*/
+
+
+@media (max-width: 1199px) {
+  .scrollmagic-pin-spacer {
+    width: 100vw !important;
+    height: auto !important;
+    min-width: 100vw !important;
+    min-height: auto !important;
+    padding: 0 !important;
+  }
+}
 
