@@ -3,6 +3,30 @@
 
     $(function(){
 
+        if ($('.hero').length) {
+
+            var timeline = new TimelineMax();
+            timeline.to('#path5', 1, {y: -100})
+                .to('#path3', 1, {y: -50}, .8)
+                .to('#path4', 1, {y: -50}, .5)
+                .to('#path2', 1.5, {x: 170, y: 170}, 1)
+                .to('#path1', 2, {x: -190, y: -190}, 1);
+
+            var controller = new ScrollMagic.Controller();
+            var scene = new ScrollMagic.Scene({
+                duration: '50%', // duration in px eg. 300, 0 = autoplay
+                // duration: '100%', // resposive duration in %
+                offset: 0, // offset trigger position by 100px
+                triggerElement: '#hero', // what will trigger scene
+                triggerHook: 0
+            });
+            // scene.setTween(timeline);
+            scene.addIndicators({ name: 'Blah Bla Bla' });
+            scene.setTween(timeline);
+            scene.setPin('.hero');
+            scene.addTo(controller);
+        }
+
         $('.instagramm-slider').each( function() {
             var curElem = $(this),
                 limit = curElem.data('limit'),
@@ -365,7 +389,8 @@
             _window = $( window ),
             _canUseSmoothScroll = true,
             _canMove = true,
-            _loader = $('.loader');
+            _loader = $('.loader'),
+            _animateCanvas = $('.animate-canvas');
 
         //private methods
         var _addEvents = function() {
@@ -677,11 +702,12 @@
                     scrollTop = _window.scrollTop(),
                     finalScroll = scrollTop - parseInt( delta * scrollDistance );
 
-                TweenMax.to( _window, scrollTime, {
+                var tweenMax = new TweenMax.to( _window, scrollTime, {
                     scrollTo : { y: finalScroll, autoKill:true },
                     ease: Power1.easeOut,
                     overwrite: 5
                 });
+
             },
             _init = function() {
                 _obj[ 0 ].obj = _self;
