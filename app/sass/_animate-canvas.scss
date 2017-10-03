@@ -14,17 +14,20 @@
 }
 @media (min-width: $tablet-landscape) {
   .animate-canvas {
+
+  }
+}
+@media (min-width: $desktop) {
+  .animate-canvas {
     display: block;
     @include absoluteCenterX();
     top: 20vh;
-    //top: 10vh;
     width: 795px;
     height: 674px;
     z-index: 2;
     background: url("../img/animate-canvas/bg.png") no-repeat center;
     background-size: contain;
     pointer-events: none;
-    //position: fixed;
 
     &__item {
       position: absolute;
@@ -52,11 +55,6 @@
         background-image: url("../img/animate-canvas/path5.png");
       }
     }
-  }
-}
-@media (min-width: $desktop) {
-  .animate-canvas {
-
   }
 }
 /*---------- /animate-canvas ---------*/

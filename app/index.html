@@ -321,20 +321,19 @@
             <!-- site__create-by -->
             <span class="site__create-by">by Artem Gorodetsky</span>
             <!-- /site__create-by -->
-            
-            <!-- animate-canvas -->
-            <div class="animate-canvas">
-                <span class="animate-canvas__item path1"></span>
-                <span class="animate-canvas__item path2"></span>
-                <span class="animate-canvas__item path3"></span>
-                <span class="animate-canvas__item path4"></span>
-                <span class="animate-canvas__item path5"></span>
-            </div>
-            <!-- /animate-canvas -->
 
             <!-- hero -->
-            <section class="hero">
+            <section class="hero" id="hero">
 
+                <!-- animate-canvas -->
+                <div class="animate-canvas">
+                    <span id="path1" class="animate-canvas__item path1"></span>
+                    <span id="path2" class="animate-canvas__item path2"></span>
+                    <span id="path3" class="animate-canvas__item path3"></span>
+                    <span id="path4" class="animate-canvas__item path4"></span>
+                    <span id="path5" class="animate-canvas__item path5"></span>
+                </div>
+                <!-- /animate-canvas -->
                 <!-- hero__description -->
                 <div class="hero__description">
 
@@ -873,11 +872,13 @@
 
 
     <script src="js/vendors/jquery-2.2.1.min.js"></script>
+    <script src="js/vendors/TweenMax.min.js"></script>
+    <script src="js/vendors/ScrollMagic.min.js"></script>
+    <script src="js/vendors/animation.gsap.min.js"></script>
     <script src="js/vendors/instafeed.min.js"></script>
     <script src="js/vendors/perfect-scrollbar.jquery.min.js"></script>
     <script src="js/vendors/swiper.jquery.min.js"></script>
     <script src="js/vendors/ScrollToPlugin.min.js"></script>
-    <script src="js/vendors/TweenMax.min.js"></script>
     <script src="js/index.min.js"></script>
 </body>
 </html>

@@ -14,14 +14,11 @@
 
             var controller = new ScrollMagic.Controller();
             var scene = new ScrollMagic.Scene({
-                duration: '50%', // duration in px eg. 300, 0 = autoplay
-                // duration: '100%', // resposive duration in %
-                offset: 0, // offset trigger position by 100px
-                triggerElement: '#hero', // what will trigger scene
+                duration: '50%',
+                offset: 0,
+                triggerElement: '#hero',
                 triggerHook: 0
             });
-            // scene.setTween(timeline);
-            scene.addIndicators({ name: 'Blah Bla Bla' });
             scene.setTween(timeline);
             scene.setPin('.hero');
             scene.addTo(controller);
@@ -389,8 +386,7 @@
             _window = $( window ),
             _canUseSmoothScroll = true,
             _canMove = true,
-            _loader = $('.loader'),
-            _animateCanvas = $('.animate-canvas');
+            _loader = $('.loader');
 
         //private methods
         var _addEvents = function() {
@@ -402,8 +398,9 @@
                     },
                     'load': function() {
                         var scrollTop = $(window).scrollTop();
+                        $('html, body').animate({scrollTop: 0},1);
                         _changeCanMove();
-                        _move( scrollTop );
+                        // _move( scrollTop );
                         _loader.addClass('hide');
                     },
                     'resize': function() {
