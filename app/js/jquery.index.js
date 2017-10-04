@@ -35,6 +35,22 @@
                 scene.addTo(controller);
             };
 
+            var firstAnimate = function () {
+                var delay = .5,
+                    startTimeLine = new TimelineMax({
+                    onComplete: function(){
+                        console.log('complete');
+                        $('body').removeClass('no-scrolling');
+                    }
+                });
+
+                startTimeLine.from('#path5', .5, {y: -100}, delay)
+                    .from('#path3', .5, {y: -50}, .3 + delay)
+                    .from('#path4', .5, {y: -50}, 0 + delay)
+                    .from('#path2', .8, {y: -110}, .5 + delay)
+                    .from('#path1', 1, {y: -170}, .5 + delay);
+            };
+
             var killScene = function () {
                 timeline.kill();
                 scene.destroy();
@@ -45,7 +61,10 @@
                     var siteWidth = $('.site').width();
 
                     if ( siteWidth >= 1200 ) {
-                        console.log('create');
+
+                        $('body').addClass('no-scrolling');
+                        firstAnimate();
+
                         createAnimateScene();
                         isSceneCreated = true;
                     }
