@@ -179,12 +179,19 @@ get_header();
 ?>
     <main class="site__content">
         <span class="site__create-by">by Artem Gorodetsky</span>
-        <section class="hero">
+        <section class="hero"  id="hero">
+            <div class="animate-canvas">
+                <span id="path1" class="animate-canvas__item path1"></span>
+                <span id="path2" class="animate-canvas__item path2"></span>
+                <span id="path3" class="animate-canvas__item path3"></span>
+                <span id="path4" class="animate-canvas__item path4"></span>
+                <span id="path5" class="animate-canvas__item path5"></span>
+            </div>
             <div class="hero__description">
                 <?= $logo.$titles_hero_string.$title_button_hero; ?>
             </div>
             <div class="hero__layout" data-text="<?= get_field('title_background', $post_id); ?>">
-                <?= $hero_gadgets_string.$hero_list_string; ?>
+                <?= $hero_list_string.$hero_gadgets_string; ?>
             </div>
             <span class="hero__scroll-down">SCROLL DOWN</span>
         </section>
