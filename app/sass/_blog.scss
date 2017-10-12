@@ -253,11 +253,6 @@
 }
 @media (min-width: $tablet-landscape) {
   .blog {
-
-  }
-}
-@media (min-width: $desktop) {
-  .blog {
     margin: 0 auto 100px;
     padding: 148px 0 77px;
 
@@ -382,6 +377,10 @@
         display: block;
       }
     }
+  }
+}
+@media (min-width: $desktop) {
+  .blog {
   }
 }
 /*---------- /blog ---------*/
