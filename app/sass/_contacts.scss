@@ -91,7 +91,8 @@
       &:before { display: none }
 
       .request__form input[type=text],
-      .request__form input[type=email] {
+      .request__form input[type=email],
+      .request__form textarea {
         height: 26px;
         border-bottom-width: 1px;
         @include main-font();
@@ -230,7 +231,8 @@
         &:before { display: none }
 
         .request__form input[type=text],
-        .request__form input[type=email] {
+        .request__form input[type=email],
+        .request__form textarea {
           height: 27px;
           border-bottom-width: 2px;
         }

@@ -82,7 +82,7 @@ if(is_front_page()) {
             width: 100%;
             height: 100%;
             z-index: 10;
-            background-color: #D1D2D4;
+            background-color: #f5f5f5;
         }
         .loader.hide {
             opacity: 0;
@@ -102,7 +102,7 @@ if(is_front_page()) {
             width: 18px;
             height: 18px;
             border-radius: 100%;
-            background-color: #fff;
+            background-color: #0c24fb;
             -webkit-animation: bouncedelay 1.4s infinite ease-in-out both;
             animation: bouncedelay 1.4s infinite ease-in-out both;
         }

@@ -40,7 +40,7 @@ if ($posts) {
 		}
 		if($flag === 0) {
 			$post_string .= '<div class="blog__first">
-                    <a href="'.get_permalink($row->ID).'" class="blog__first-pic show">
+                    <a href="'.get_permalink($row->ID).'" class="blog__first-pic">
                         <img src="'.get_the_post_thumbnail_url($row->ID).'" alt="'.get_post_meta($row->ID, '_wp_attachment_image_alt', true).'">
                     </a>
                     <div class="blog__first-wrap">
@@ -60,7 +60,7 @@ if ($posts) {
                 </div>';
 		} else {
 			$post_string .= '<div class="blog__list-item">
-                            <a href="'.get_permalink($row->ID).'" class="blog__list-pic show">
+                            <a href="'.get_permalink($row->ID).'" class="blog__list-pic">
                                <img src="'.get_the_post_thumbnail_url($row->ID).'" alt="'.get_post_meta($row->ID, '_wp_attachment_image_alt', true).'">
                             </a>
                             <!-- /blog__list-pic -->
