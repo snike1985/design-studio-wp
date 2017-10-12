@@ -327,14 +327,16 @@
     }
   }
 
+  .message-field{
+    position: relative;
+  }
+
   .message-field__height,
   .message-field__text {
     overflow: hidden;
     opacity: 0;
     z-index: -1;
     width: 100%;
-    border-style: solid;
-    border-width: 0 0 3px 0;
     min-height: 26px;
     @include main-font();
     white-space: pre-wrap;
@@ -350,6 +352,19 @@
     position: absolute;
     top: 0;
     width: 100%;
+  }
+
+  .contact-form__message{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 26px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    transition: height .3s ease;
+    -webkit-transition: height .3s ease;
   }
 
 }
