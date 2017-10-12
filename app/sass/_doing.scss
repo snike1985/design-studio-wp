@@ -162,7 +162,7 @@
 
     &__subtitle {
       top: 459px;
-      left: 55px;
+      left: 25px;
       font-size: 23px;
       line-height: 27px;
       letter-spacing: normal;
@@ -202,6 +202,9 @@
 }
 @media (min-width: $desktop) {
   .doing {
+    &__subtitle {
+      left: 55px;
+    }
   }
 }
 /*---------- /doing ---------*/
