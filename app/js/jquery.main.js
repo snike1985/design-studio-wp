@@ -22,6 +22,13 @@ var MessageHigh = function ( obj ) {
                     _message.css( 'height', _messageText.height() );
                     _messageHeight.css( 'height', _messageText.height() );
 
+                },
+                'change' : function () {
+
+                    _messageText.html( _message.val() + '__' );
+                    _message.css( 'height', _messageText.height() );
+                    _messageHeight.css( 'height', _messageText.height() );
+
                 }
             } );
 
