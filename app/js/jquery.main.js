@@ -19,7 +19,7 @@ var MessageHigh = function ( obj ) {
                 'keydown' : function() {
 
                     _messageText.html( _message.val() + '__' );
-                    _message.css( 'height', _messageText.height() + 25 );
+                    _message.css( 'height', _messageText.height() );
                     _messageHeight.css( 'height', _messageText.height() );
 
                 }
