@@ -129,10 +129,6 @@
 @media (min-width: $tablet-landscape) {
   .doing {
 
-  }
-}
-@media (min-width: $desktop) {
-  .doing {
     position: relative;
     margin-bottom: 83px;
 
@@ -202,6 +198,11 @@
         width: auto;
       }
     }
+
+  }
+}
+@media (min-width: $desktop) {
+  .doing {
   }
 }
 /*---------- /doing ---------*/

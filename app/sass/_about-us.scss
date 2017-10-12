@@ -105,10 +105,6 @@
 @media (min-width: $tablet-landscape) {
   .about-us {
 
-  }
-}
-@media (min-width: $desktop) {
-  .about-us {
     padding: 192px 20px 0;
 
     &__title {
@@ -149,6 +145,12 @@
         }
       }
     }
+
+  }
+}
+@media (min-width: $desktop) {
+  .about-us {
+
   }
 }
 /*---------- /about-us ---------*/
