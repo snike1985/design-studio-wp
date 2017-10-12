@@ -100,7 +100,8 @@
         height: 100%;
         z-index: 1;
         content: '';
-        background-color: rgba(2,0,255,0.7);
+        //background-color: rgba(2,0,255,0.7);
+        background-color: #F5F5F5;
         transition-delay: .2s;
         backface-visibility: hidden;
       }
@@ -182,7 +183,8 @@
         height: 100%;
         z-index: 1;
         content: '';
-        background-color: rgba(2,0,255,0.7);
+        //background-color: rgba(2,0,255,0.7);
+        background-color: #F5F5F5;
         transition-delay: .2s;
         backface-visibility: hidden;
       }
