@@ -330,7 +330,7 @@
   .message-field{
     position: relative;
 
-    span,
+    &__height,
     &__text {
       overflow: hidden;
       opacity: 0;
@@ -346,6 +346,10 @@
       word-wrap: break-word;
       transition: height .3s ease;
       -webkit-transition: height .3s ease;
+    }
+
+    span{
+      position: static;
     }
 
     &__text {
