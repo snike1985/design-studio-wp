@@ -1,0 +1,61 @@
+.message-field{
+  position: relative;
+
+  &__height,
+  &__text {
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+    width: 100%;
+    min-height: 26px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-width: 0 0 3px 0;
+    border-color: transparent;
+    @include main-font();
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    transition: height .3s ease;
+    -webkit-transition: height .3s ease;
+  }
+
+  span{
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__text {
+    position: absolute;
+    top: 0;
+  }
+
+  &__message{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 26px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    transition: height .3s ease;
+    -webkit-transition: height .3s ease;
+  }
+
+  .your-message {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  textarea{
+    overflow: hidden;
+    min-height: 26px;
+    @include main-font();
+    border-width: 0 0 3px 0;
+    border-color: transparent;
+    margin-bottom: 20px;
+  }
+
+}
