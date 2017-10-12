@@ -4,24 +4,87 @@
     $(function(){
 
         if ($('.hero').length) {
-
-            var timeline = new TimelineMax();
-            timeline.to('#path5', 1, {y: -100})
-                .to('#path3', 1, {y: -50}, .8)
-                .to('#path4', 1, {y: -50}, .5)
-                .to('#path2', 1.5, {x: 170, y: 170}, 1)
-                .to('#path1', 2, {x: -190, y: -190}, 1);
-
-            var controller = new ScrollMagic.Controller();
-            var scene = new ScrollMagic.Scene({
+            var isSceneCreated = false,
+                timeline = new TimelineMax(),
+                controller = new ScrollMagic.Controller(),
+                scene = new ScrollMagic.Scene({
                 duration: '100%',
                 offset: 0,
                 triggerElement: '#hero',
                 triggerHook: 0
             });
-            scene.setTween(timeline);
-            scene.setPin('.hero');
-            scene.addTo(controller);
+
+            var createAnimateScene = function () {
+                timeline = new TimelineMax();
+                controller = new ScrollMagic.Controller();
+                scene = new ScrollMagic.Scene({
+                    duration: '100%',
+                    offset: 0,
+                    triggerElement: '#hero',
+                    triggerHook: 0
+                });
+
+                timeline.to('#path5', 1, {y: -100})
+                    .to('#path3', 1, {y: -50}, .8)
+                    .to('#path4', 1, {y: -50}, .5)
+                    .to('#path2', 1.5, {y: -110}, 1)
+                    .to('#path1', 2, {y: -170}, 1);
+
+                scene.setTween(timeline);
+                scene.setPin('.hero');
+                scene.addTo(controller);
+            };
+
+            var firstAnimate = function () {
+                var delay = .5,
+                    startTimeLine = new TimelineMax({
+                    onComplete: function(){
+                        console.log('complete');
+                        $('body').removeClass('no-scrolling');
+                    }
+                });
+
+                startTimeLine.from('#path5', .5, {y: -100}, delay)
+                    .from('#path3', .5, {y: -50}, .3 + delay)
+                    .from('#path4', .5, {y: -50}, 0 + delay)
+                    .from('#path2', .8, {y: -110}, .5 + delay)
+                    .from('#path1', 1, {y: -170}, .5 + delay);
+            };
+
+            var killScene = function () {
+                timeline.kill();
+                scene.destroy();
+            };
+
+            $(window).on({
+                'load': function () {
+                    var siteWidth = $('.site').width();
+
+                    if ( siteWidth >= 1200 ) {
+
+                        $('body').addClass('no-scrolling');
+                        firstAnimate();
+
+                        createAnimateScene();
+                        isSceneCreated = true;
+                    }
+                },
+                'resize': function () {
+                    var siteWidth = $('.site').width();
+
+                    if ( siteWidth < 1200 ) {
+                        if (isSceneCreated) {
+                            killScene();
+                            isSceneCreated = false;
+                        }
+                    } else {
+                        if (!isSceneCreated) {
+                            createAnimateScene();
+                            isSceneCreated = true;
+                        }
+                    }
+                }
+            });
         }
 
         $('.instagramm-slider').each( function() {

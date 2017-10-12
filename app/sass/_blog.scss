@@ -27,7 +27,7 @@
     font-size: 16px;
     line-height: 23px;
     white-space: nowrap;
-    @include subtitle-bold();
+    @include title();
 
     &-item,
     &-item:visited {
@@ -36,7 +36,7 @@
       justify-content: center;
       height: 24px;
       min-width: 38px;
-      padding: 012px;
+      padding: 0 12px;
       margin: 0 6px 11px 0;
       border-radius: 100px;
       color: #FFFFFF;
@@ -63,7 +63,7 @@
       margin-bottom: 9px;
       font-size: 14px;
       line-height: 18px;
-      @include subtitle-bold();
+      @include title();
 
       li {
         display: flex;
@@ -71,7 +71,7 @@
         justify-content: center;
         height: 20px;
         min-width: 30px;
-        padding: 4px 10px 0;
+        padding: 0 10px;
         margin: 0 5px 5px 0;
         border-radius: 100px;
         color: #FFFFFF;
@@ -101,8 +101,6 @@
         z-index: 1;
         content: '';
         background-color: rgba(2,0,255,0.7);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translate(-100%, 0);
         transition-delay: .2s;
         backface-visibility: hidden;
       }
@@ -114,21 +112,6 @@
         width: 100%;
         min-height: 100%;
         z-index: 2;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translate(-100%, 0);
-      }
-
-      &.is-show {
-
-        &:before {
-          transform: translate(0);
-          transition-delay: 0s;
-        }
-
-        img {
-          transform: translate(0);
-          transition-delay: .2s;
-        }
       }
     }
 
@@ -200,8 +183,6 @@
         z-index: 1;
         content: '';
         background-color: rgba(2,0,255,0.7);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translate(-100%, 0);
         transition-delay: .2s;
         backface-visibility: hidden;
       }
@@ -213,22 +194,8 @@
         width: 100%;
         min-height: 100%;
         z-index: 2;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translate(-100%, 0);
       }
 
-      &.is-show {
-
-        &:before {
-          transform: translate(0);
-          transition-delay: 0s;
-        }
-
-        img {
-          transform: translate(0);
-          transition-delay: .2s;
-        }
-      }
     }
 
     &-head {
@@ -298,7 +265,7 @@
       margin-bottom: 88px;
 
       &-item,
-      &-item:visited { padding: 4px 12px 0 }
+      &-item:visited { padding: 0 12px }
     }
 
     &__title {
@@ -332,7 +299,7 @@
         li {
           height: 24px;
           min-width: 38px;
-          padding: 4px 12px 0;
+          padding: 0 12px;
           margin: 0 11px 11px 0;
         }
       }

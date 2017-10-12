@@ -61,11 +61,33 @@ if(!empty($work)) {
     $work_string = '<div class="works__list">';
     $counter = 0;
     foreach ($work as $row) {
+	    $work_item_category = get_the_terms($row,'work_cat');
+	    $work_item_tags = '';
 	    $class = '';
+	    if(!empty($work_item_category)) {
+		    foreach ($work_item_category as $rows) {
+			    $work_item_class .= ' '.$rows->slug;
+			    $work_item_tags .= '<li>'.$rows->name.'</li>';
+		    }
+	    }
         if($counter > 1) {
             $class = ' mobile-hide';
         }
-	    $work_string .= '<a href="'.get_permalink($row).'" class="works__item show'.$class.'"><span class="works__item-pic"><img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_post_meta($row, '_wp_attachment_image_alt', true).'"></span></a>';
+	    $work_string .= '<a href="'.get_permalink($row).'" class="works__item show'.$class.'">
+    <div class="works__item-wrap">
+        <span class="works__item-pic">
+            <img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_post_meta($row, '_wp_attachment_image_alt', true).'">
+        </span>
+        <div class="works__item-footer">
+            <ul class="works__item-text">
+            '.get_the_excerpt($row).'
+            </ul>
+            <ul class="works__item-data">
+                '.$work_item_tags.'
+            </ul>
+        </div>
+    </div>
+</a>';
     $counter++;
     }
 	$work_string .= '</div>';

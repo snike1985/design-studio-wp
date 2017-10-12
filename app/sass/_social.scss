@@ -10,11 +10,14 @@
     justify-content: center;
     margin: 0 19px;
     height: 58px;
+    transition: transform .3s ease-in-out;
 
     svg {
       max-width: 100%;
       max-height: 100%;
     }
+
+    &:hover { transform: matrix(1.1,0,0,1.1,0,0) }
   }
 }
 @media (min-width: $phone-landscape) {
