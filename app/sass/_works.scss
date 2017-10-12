@@ -385,7 +385,7 @@
       &.works__title_left {
         top: 69px;
         right: auto;
-        left: -93px;
+        left: -38px;
       }
     }
 
@@ -459,6 +459,9 @@
 
     &__title {
       right: -110px;
+      &.works__title_left {
+        left: -93px;
+      }
     }
   }
 
