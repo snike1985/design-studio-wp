@@ -163,6 +163,7 @@ if(is_front_page()) {
 <body>
 <!-- loader -->
 <div class="loader">
+
     <!-- loader__wrap -->
     <div class="loader__wrap">
         <div class="loader__one"></div>
@@ -170,6 +171,7 @@ if(is_front_page()) {
         <div class="loader__three"></div>
     </div>
     <!-- /loader__wrap -->
+
 </div>
 <!-- /loader -->
 <div class="site <?= $class; ?>">
