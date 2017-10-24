@@ -117,6 +117,7 @@
 
         $('.case').each( function() {
             new Case( $(this) );
+            new Sliders ( $( this ) );
         } );
 
         $('.contact-us').each( function() {
@@ -153,6 +154,26 @@
 
         $('.works_isotope').each( function() {
             new Works( $(this) );
+        } );
+
+        $.each( $( '.team' ), function() {
+            new Sliders ( $( this ) );
+        } );
+
+        $.each( $( '.cases' ), function() {
+            new Sliders ( $( this ) );
+        } );
+
+        $.each( $( '.help' ), function() {
+            new Sliders ( $( this ) );
+        } );
+
+        $.each( $( '.contact-cards' ), function() {
+            new Sliders ( $( this ) );
+        } );
+
+        $.each( $( '.outsource' ), function() {
+            new Sliders ( $( this ) );
         } );
 
     });
@@ -248,7 +269,7 @@
 
             },
             _init = function() {
-                var swiper = new Swiper('.swiper-container', {
+                var swiper = new Swiper( '.swiper-container', {
                     nextButton: '.case__slider-next',
                     prevButton: '.case__slider-prev',
                     slidesPerView: 1,
@@ -579,7 +600,7 @@
                     }
                 } );
 
-                $('.team__item').each( function(i) {
+                /*$('.team__item').each( function(i) {
                     var curElem = $(this),
                         curTop = curElem.offset().top,
                         curHeight = curElem.height(),
@@ -597,7 +618,7 @@
                             _paralax( curElem, 0, scrollTop - (curTop - winHeight), curKoef);
                         }
                     }
-                } );
+                } );*/
 
                 $('.circle').each( function(i) {
                     var curElem = $(this),
@@ -1024,6 +1045,180 @@
             _init = function() {
                 _addEvents();
                 _initScroll();
+            };
+
+        //public properties
+
+        //public methods
+
+        _init();
+    };
+
+    var Sliders = function( obj ) {
+
+        //private properties
+        var _obj = obj,
+            _teamSlider = _obj.find( '.team__list' ),
+            _casesSlider = _obj.find( '.cases__list' ),
+            _helpSlider = _obj.find( '.help__swiper' ),
+            _helpPagination = _obj.find( '.help__pagination' ),
+            _contactCardsSlider = _obj.find( '.contact-cards__swiper' ),
+            _contactCardsPagination = _obj.find( '.contact-cards__pagination' ),
+            _outsourceSlider = _obj.find( '.outsource__swiper' ),
+            _outsourcePagination = _obj.find( '.outsource__pagination' ),
+            _caseSlider = _obj.find( '.case__slider' ),
+            _casePagination = _obj.find( '.case__pagination' ),
+            _team,
+            _cases,
+            _case,
+            _help,
+            _contactCards,
+            _outsource,
+            _window = $( window );
+
+        //private methods
+        var _initSlider = function() {
+
+                if ( _window.outerWidth() < 1024 ) {
+
+                    _team = new Swiper ( _teamSlider, {
+                        effect: 'slide',
+                        autoplay: false,
+                        speed: 500,
+                        slidesPerView: 'auto',
+                        loop: false
+                    } );
+
+                    _help = new Swiper ( _helpSlider, {
+                        effect: 'slide',
+                        autoplay: false,
+                        speed: 500,
+                        slidesPerView: 1,
+                        loop: false,
+                        nextButton: '.help__slider-next',
+                        prevButton: '.help__slider-prev',
+                        onInit: function () {
+
+                            var item = _helpSlider.find( '.swiper-slide' ),
+                                curItem = item.filter( '.swiper-slide-active' );
+
+                            _helpPagination.html( '<span>'+ ( curItem.index() + 1 ) +'</span> / '+ item.length );
+
+                        },
+                        onSlideChangeStart: function () {
+
+                            var item = _helpSlider.find( '.swiper-slide' ),
+                                curItem = item.filter( '.swiper-slide-active' );
+
+                            _helpPagination.html( '<span>'+ ( curItem.index() + 1 ) +'</span> / '+ item.length );
+
+                        }
+                    } );
+
+                    _contactCards = new Swiper ( _contactCardsSlider, {
+                        effect: 'slide',
+                        autoplay: false,
+                        speed: 500,
+                        slidesPerView: 1,
+                        loop: false,
+                        nextButton: '.contact-cards__slider-next',
+                        prevButton: '.contact-cards__slider-prev',
+                        onInit: function () {
+
+                            var item = _contactCardsSlider.find( '.swiper-slide' ),
+                                curItem = item.filter( '.swiper-slide-active' );
+
+                            _contactCardsPagination.html( '<span>'+ ( curItem.index() + 1 ) +'</span> / '+ item.length );
+
+                        },
+                        onSlideChangeStart: function () {
+
+                            var item = _contactCardsSlider.find( '.swiper-slide' ),
+                                curItem = item.filter( '.swiper-slide-active' );
+
+                            _contactCardsPagination.html( '<span>'+ ( curItem.index() + 1 ) +'</span> / '+ item.length );
+
+                        }
+                    } );
+
+                    _outsource = new Swiper ( _outsourceSlider, {
+                        effect: 'slide',
+                        autoplay: false,
+                        speed: 500,
+                        slidesPerView: 1,
+                        loop: false,
+                        nextButton: '.outsource__slider-next',
+                        prevButton: '.outsource__slider-prev',
+                        onInit: function () {
+
+                            var item = _outsourceSlider.find( '.swiper-slide' ),
+                                curItem = item.filter( '.swiper-slide-active' );
+
+                            _outsourcePagination.html( '<span>'+ ( curItem.index() + 1 ) +'</span> / '+ item.length );
+
+                        },
+                        onSlideChangeStart: function () {
+
+                            var item = _outsourceSlider.find( '.swiper-slide' ),
+                                curItem = item.filter( '.swiper-slide-active' );
+
+                            _outsourcePagination.html( '<span>'+ ( curItem.index() + 1 ) +'</span> / '+ item.length );
+
+                        }
+                    } );
+
+                }
+
+                _cases = new Swiper ( _casesSlider, {
+                    effect: 'slide',
+                    autoplay: false,
+                    speed: 500,
+                    slidesPerView: 3,
+                    loop: false,
+                    spaceBetween: 30,
+                    nextButton: '.case__slider-next',
+                    prevButton: '.case__slider-prev',
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 'auto',
+                            spaceBetween: 0
+                        }
+                    }
+                } );
+
+                if ( _caseSlider.find( '.swiper-slide' ).length > 1 ) {
+
+                    _case = new Swiper ( _caseSlider, {
+                        effect: 'slide',
+                        autoplay: false,
+                        speed: 500,
+                        slidesPerView: 1,
+                        loop: false,
+                        nextButton: _casesSlider.find( '.case__slider-next' ),
+                        prevButton: _casesSlider.find( '.case__slider-prev' ),
+                        onInit: function () {
+
+                            var item = _caseSlider.find( '.swiper-slide' ),
+                                curItem = item.filter( '.swiper-slide-active' );
+
+                            _casePagination.html( '<span>'+ ( curItem.index() + 1 ) +'</span> / '+ item.length );
+
+                        },
+                        onSlideChangeStart: function () {
+
+                            var item = _caseSlider.find( '.swiper-slide' ),
+                                curItem = item.filter( '.swiper-slide-active' );
+
+                            _casePagination.html( '<span>'+ ( curItem.index() + 1 ) +'</span> / '+ item.length );
+
+                        }
+                    } );
+
+                }
+
+            },
+            _init = function() {
+                _initSlider();
             };
 
         //public properties

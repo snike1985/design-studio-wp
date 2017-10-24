@@ -95,11 +95,20 @@
 
   &.request-btn {
     min-width: 0;
-    //padding: 6px 11px 3px;
-    padding: 4px 9px;
+    border-width: 1px;
+    @include subtitle-bold;
+    padding: 4px 19px;
 
-    span { font-size: 15px }
+    span {
+      font-size: 11px;
+    }
+
+    i{
+      display: none;
+    }
+
   }
+
 }
 @media (min-width: $phone-landscape) {
   .btn {
@@ -128,12 +137,19 @@
 
     &.request-btn {
       //padding: 10px 23px 8px;
-      padding: 8px 21px;
+      border-width: 2px;
+      padding: 8px 19px;
 
       span {
         font-size: 18px;
         line-height: 21px;
       }
+
+      i{
+        display: inline-block;
+        font-style: normal;
+      }
+
     }
   }
 }

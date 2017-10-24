@@ -22,6 +22,7 @@
     }
 
   }
+
   &__header {
     display: flex;
     align-items: center;
@@ -30,16 +31,21 @@
     top: 0;
     right: 0;
     left: 0;
-    height: 80px;
+    height: 60px;
     z-index: 3;
-    padding: 10px 15px 10px 100px;
+    padding: 10px 13px 10px 100px;
     pointer-events: none;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
 
-    .logo { display: none }
+    .logo {
+      display: none;
+    }
 
     > * {
       pointer-events: fill;
     }
+
   }
 
   &__content {
@@ -63,7 +69,6 @@
 }
 @media (min-width: $tablet-landscape) {
   .site {
-
   }
 }
 @media (min-width: $desktop) {
@@ -73,6 +78,8 @@
       height: 154px;
       justify-content: space-between;
       padding: 20px 45px 20px 135px;
+      background-color: transparent;
+      box-shadow: none;
 
       .logo {
         display: block;

@@ -103,6 +103,10 @@ function add_js() {
 	}
 
 	if(is_page(8)) {
+		wp_enqueue_script('instafeed');
+		wp_enqueue_script('swiper');
+
+		wp_enqueue_style('swiper');
 		wp_enqueue_style('about-us-page');
 	}
 

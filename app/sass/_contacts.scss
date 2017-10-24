@@ -193,9 +193,9 @@
     &__note {
       display: block;
       position: absolute;
-      top: 420px;
-      left: 711px;
-      width: calc(100% - 750px);
+      top: 474px;
+      left: 811px;
+      width: calc(100% - 850px);
       color: #3F4551;
       font-size: 20px;
       line-height: 27px;
@@ -205,9 +205,9 @@
 
     &__form {
       position: relative;
-      top: -75px;
-      left: 504px;
-      width: 500px;
+      top: -47px;
+      left: 595px;
+      width: 570px;
       padding: 60px 83px 60px;
 
       &-title {
@@ -245,17 +245,6 @@
 }
 @media (min-width: $desktop) {
   .contacts {
-    &__note {
-      top: 474px;
-      left: 811px;
-      width: calc(100% - 850px);
-    }
-
-    &__form {
-      top: -47px;
-      left: 595px;
-      width: 570px;
-    }
 
   }
 }
