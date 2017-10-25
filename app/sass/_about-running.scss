@@ -1,0 +1,168 @@
+/*---------- about-running ----------*/
+.about-running {
+  margin-bottom: -7px;
+  padding: 101px 30px 0;
+  color: #3F4551;
+
+  h2{
+    margin-bottom: 21px;
+    padding: 0 15px;
+    color: #3F4551;
+    @include title;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &__preface{
+    margin-bottom: 12px;
+    color: #0200FF;
+    text-align: center;
+    overflow: hidden;
+
+    p{
+      margin-bottom: 18px;
+      @include title;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+  }
+
+  &__content{
+    padding-right: 10px;
+    @include main-font;
+    font-size: 14px;
+    line-height: 22px;
+    overflow: hidden;
+
+    p{
+      margin-bottom: 26px;
+    }
+
+  }
+
+  &__preview{
+    position: relative;
+    width: 305px;
+    height: 161px;
+    margin: 0 auto;
+    padding: 16px 37px 14px 38px;
+    background: url( ../img/laptop-macbook-air.png ) no-repeat top center;
+    background-size: cover;
+
+    &-img{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      img{
+        display: block;
+        width: 100%;
+      }
+
+    }
+
+  }
+
+  &__slider-next{
+
+  }
+
+  &__skip{
+    display: none;
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .about-running {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .about-running {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .about-running {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: -37px;
+    padding-top: 164px;
+    z-index: 1;
+
+    h2{
+      margin-bottom: 34px;
+      padding: 0 40px 0 0;
+      font-size: 40px;
+      line-height: 47px;
+    }
+
+    &__preface{
+      margin-bottom: 85px;
+      width: calc( 50% - 100px );
+      text-align: left;
+
+      p{
+        margin-bottom: 0;
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+    }
+
+    &__content{
+      width: calc( 50% + 16px );
+      margin-bottom: 58px;
+      padding: 3px 0 0 0;
+      font-size: 16px;
+      line-height: 30px;
+      letter-spacing: .2px;
+
+      p {
+        margin-bottom: 26px;
+      }
+
+    }
+
+    &__preview{
+      width: 868px;
+      height: 457px;
+      left: 0;
+      padding: 48px 103px 36px 106px;
+    }
+
+    &__skip{
+      display: block;
+      position: absolute;
+      top: calc( 100% + 59px );
+      left: 50%;
+      transform: translateX(-50%);
+
+      svg{
+        height: 34.97px;
+        width: 31.06px;
+        fill: #3F4551;
+        animation-name: arrowDown;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-fill-mode: none;
+        animation-play-state: running;
+      }
+
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .about-running {
+    padding: 164px calc( 50% - 540px ) 0;
+  }
+}
+/*---------- /logo ---------*/
+

@@ -1,0 +1,208 @@
+/*---------- contact-cards ----------*/
+.contact-cards {
+  margin: 0 auto;
+  padding: 40px 0 31px;
+  color: #3F4551;
+  @include main-font;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+
+  h2{
+    margin-bottom: 19px;
+    padding: 0 70px;
+    @include subtitle-bold;
+    color: #0200FF;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  &__control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+
+  &__pagination{
+    color: #3F4551;
+    @include subtitle-bold;
+    font-size: 21px;
+    line-height: 30px;
+
+    span{
+      color: #0200FF;
+    }
+
+  }
+
+  &__slider{
+
+    &-prev,
+    &-next {
+      height: 20px;
+      width: 41.3px;
+      margin-top: -10px;
+      z-index: 2;
+      opacity: 1;
+      color: #3F4551;
+      transition: opacity .3s ease-in-out;
+      cursor: pointer;
+
+      svg { fill: #3F4551 }
+
+      &.swiper-button-disabled{
+        opacity: .25;
+      }
+
+    }
+
+  }
+
+  &__swiper{
+  }
+
+  &__item{
+    padding: 0 30px;
+    @include main-font();
+    color: #3F4551;
+    font-size: 16px;
+    line-height: 30px;
+
+    svg{
+      fill: #0200FF;
+    }
+
+    span{
+      color: #0200FF;
+    }
+
+  }
+
+  &__info{
+    margin-bottom: 28px;
+    padding: 11px 15px;
+    background-color: #0200FF;
+    color: #fff;
+    font-size: 18px;
+    line-height: 19px;
+    @include subtitle-bold;
+    border-radius: 50px;
+  }
+
+  &__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 34px;
+  }
+
+  &__skip{
+    display: none;
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .contact-cards {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .contact-cards {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .contact-cards {
+    position: relative;
+    padding: 68px 40px 10px;
+
+    h2{
+      max-width: 480px;
+      margin: 0 auto 37px;
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    .swiper-wrapper{
+      max-width: 1196px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    &__item{
+      width: 31%;
+      height: 380px;
+      margin: 0 1%;
+      padding: 57px 40px 23px;
+      border-radius: 5px;
+
+      &:nth-child(2){
+        padding: 57px 34px 23px;
+      }
+
+      &:nth-child(3){
+        padding: 57px 80px 23px;
+      }
+
+    }
+
+    &__control{
+      display: none;
+    }
+
+    &__icon{
+      margin-bottom: 40px;
+    }
+
+    &__info{
+      margin-bottom: 41px;
+      padding: 0;
+      background-color: transparent;
+      color: #3F4551;
+      line-height: 26px;
+    }
+
+    &__skip{
+      display: block;
+      position: absolute;
+      top: calc( 100% - 59px );
+      left: 50%;
+      transform: translateX(-50%);
+
+      svg{
+        height: 34.97px;
+        width: 31.06px;
+        fill: #3F4551;
+        animation-name: arrowDown;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-fill-mode: none;
+        animation-play-state: running;
+      }
+
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .contact-cards {
+
+    &__item{
+      transition: background-color .3s ease;
+
+      &:hover{
+        background-color: #fff;
+      }
+
+    }
+
+  }
+}
+/*---------- /contact-cards ---------*/
+

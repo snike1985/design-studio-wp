@@ -189,32 +189,32 @@
       width: 100%;
     }
 
-    &-prev,
-    &-next {
-      height: 31px;
-      width: 34px;
-      z-index: 2;
-      opacity: 1;
-      color: #3F4551;
-      transition: opacity .3s ease-in-out;
-      cursor: pointer;
+  }
 
-      svg { fill: #3F4551 }
+  &__prev,
+  &__next {
+    height: 31px;
+    width: 34px;
+    z-index: 2;
+    opacity: 1;
+    color: #3F4551;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
 
-      &.swiper-button-disabled{
-        opacity: .25;
-      }
+    svg { fill: #3F4551 }
 
+    &.swiper-button-disabled{
+      opacity: .25;
     }
 
-    &-prev{
-      margin-left: 29px;
-    }
+  }
 
-    &-next{
-      margin-right: 29px;
-    }
+  &__prev{
+    margin-left: 29px;
+  }
 
+  &__next{
+    margin-right: 29px;
   }
 
   &__pagination{
@@ -352,7 +352,7 @@
     }
 
     &__content{
-      padding: 203px calc( 50% - 285px) 199px;
+      padding: 203px calc( 50% - 285px) 70px;
       font-size: 16px;
       line-height: 30px;
 
@@ -401,6 +401,23 @@
 
       }
 
+      ol{
+        margin-left: 29px;
+        padding-top: 10px;
+
+        li{
+          margin-bottom: 20px;
+          padding-left: 40px;
+          line-height: 30px;
+
+          &:before{
+            font-size: 20px;
+          }
+
+        }
+
+      }
+
       &-small{
         padding: 152px calc( 50% - 265px ) 199px;
         text-align: center;
@@ -412,7 +429,71 @@
       margin: 57px auto -6px;
     }
 
+    &__pagination{
+      order: 1;
+      margin-bottom: 13px;
+    }
+
+    &__swiper{
+      position: relative;
+      justify-content: center;
+      margin: 68px -100px 0;
+    }
+
+    &__slider{
+      order: 2;
+      margin-bottom: 0;
+    }
+
+    &__prev,
+    &__next{
+      position: absolute;
+      top: calc( 50% - 10px );
+    }
+
+    &__prev{
+      left: -130px;
+    }
+
+    &__next{
+      right: -130px;
+    }
+
+    &__feedback{
+      padding: 103px calc( 50% - 282px) 26px;
+      font-size: 16px;
+      line-height: 30px;
+
+      h2{
+        margin-bottom: 58px;
+        font-size: 40px;
+        line-height: 40px;
+      }
+
+      strong{
+        display: block;
+        margin-bottom: 3px;
+        font-size: 28px;
+        line-height: 28px;
+      }
+
+    }
+
+    &__ava{
+      margin-bottom: 34px;
+    }
+
+    &__client{
+      font-size: 14px;
+      line-height: 22px;
+    }
+
   }
+
+  .cases .btn.cases__btn{
+    margin-bottom: 0!important;
+  }
+
 }
 /*---------- /case ---------*/
 

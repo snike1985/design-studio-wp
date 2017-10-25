@@ -1194,8 +1194,8 @@
                         speed: 500,
                         slidesPerView: 1,
                         loop: false,
-                        nextButton: _casesSlider.find( '.case__slider-next' ),
-                        prevButton: _casesSlider.find( '.case__slider-prev' ),
+                        nextButton: _casesSlider.find( '.case__next' ),
+                        prevButton: _casesSlider.find( '.case__prev' ),
                         onInit: function () {
 
                             var item = _caseSlider.find( '.swiper-slide' ),

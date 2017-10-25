@@ -177,6 +177,7 @@ if(is_front_page()) {
 <div class="site <?= $class; ?>">
     <header class="site__header">
         <?= $logo; ?>
+        <?php if(!is_page_template('page-landing.php')) { ?>
         <nav class="menu">
             <span class="menu__btn"><span></span></span>
             <div class="menu__wrap">
@@ -191,6 +192,7 @@ if(is_front_page()) {
                 </div>
             </div>
         </nav>
+        <?php } ?>
         <div class="request">
             <div class="request__wrap">
                 <span class="request__close"></span>

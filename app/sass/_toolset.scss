@@ -1,0 +1,87 @@
+/*---------- toolset ----------*/
+.toolset {
+  padding: 25px 16px 14px;
+  background-color: #fff;
+
+  h2{
+    position: relative;
+    margin-bottom: 42px;
+    color: #3F4551;
+    @include subtitle-bold();
+    font-size: 22px;
+    line-height: 18px;
+    letter-spacing: .6px;
+    text-align: center;
+  }
+
+  &__wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  &__item{
+    width: 23%;
+    margin: 0 4.5% 25px;
+    margin-bottom: 26px;
+    background-color: #D8D8D8;
+    @include main-font;
+    font-size: 16px;
+    line-height: 30px;
+
+    img{
+      display: block;
+      width: 100%;
+    }
+
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .toolset {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .toolset {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .toolset {
+    padding: 78px 20px 57px;
+
+    h2{
+      margin-bottom: 59px;
+      font-size: 39px;
+      line-height: 1;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+      color: #3F4551;
+      font-size: 67px;
+      line-height: 79px;
+      letter-spacing: .6px;
+    }
+
+    &__wrap{
+      max-width: 835px;
+      margin: 0 auto;
+    }
+
+    &__item{
+      width: 12%;
+      margin: 0 4% 68px;
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .toolset {
+
+  }
+}
+/*---------- /toolset ---------*/
+

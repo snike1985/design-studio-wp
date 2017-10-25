@@ -1,0 +1,166 @@
+/*---------- contact-us ----------*/
+.contact-us {
+  padding: 52px 20px 0;
+  text-align: center;
+  transform: translate(0, 100px);
+  opacity: 0;
+  background-color: #F9F9F9;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+
+  &.is-show {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 25px;
+    color: #0200FF;
+    font-size: 23px;
+    line-height: 27px;
+    letter-spacing: .1px;
+    @include subtitle-bold();
+
+    span {
+      display: block;
+      position: relative;
+      top: -31px;
+      color: #0200FF;
+      font-size: 122px;
+      line-height: 193px;
+      text-transform: uppercase;
+      @include title();
+    }
+  }
+
+  p {
+    padding: 0 10px;
+    color: #3F4551;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+
+    a{
+      color: #3F4551;
+    }
+
+  }
+
+  &__form {
+    max-width: 404px;
+    margin: 0 auto;
+    padding: 39px 0;
+
+    input[type=text],
+    input[type=email],
+    textarea {
+      height: 29px;
+      width: 100%;
+      margin-bottom: 28px;
+      border-color: rgba(69, 69, 81, .2);
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      color: #3F4551;
+      background: transparent;
+      font-size: 14px;
+      line-height: 22px;
+      text-align: center;
+      box-sizing: border-box;
+      border-radius: 0;
+      caret-color: #0200FF;
+      @include main-font();
+
+      &::-webkit-input-placeholder {
+        color: #AAABAF;
+      }
+      &::-moz-placeholder {
+        color: #AAABAF;
+      }
+      &:-ms-input-placeholder {
+        color: #AAABAF;
+      }
+      &:-moz-placeholder {
+        color: #AAABAF;
+      }
+    }
+
+    input[type=submit] {
+      display: none;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 24px;
+    }
+  }
+}
+
+@media (min-width: $phone-landscape) {
+  .contact-us {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .contact-us {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .contact-us {
+    padding: 52px 20px 45px;
+
+    &__title {
+      margin-bottom: 14px;
+      font-size: 38px;
+      line-height: 50px;
+      letter-spacing: normal;
+    }
+
+    p {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 0;
+      font-size: 16px;
+      line-height: 30px;
+
+      a{
+        @include main-font-bold;
+        font-weight: 600;
+      }
+
+    }
+
+    &__form {
+      padding: 48px 0;
+
+      input[type=text],
+      input[type=email],
+      textarea {
+        height: 27px;
+        margin-bottom: 28px;
+        font-size: 16px;
+        line-height: 25px;
+      }
+
+      .btn {
+        width: 265px;
+        margin-top: 29px;
+        padding: 16px 21px 18px;
+      }
+
+    }
+
+    .message-field__text{
+      margin-bottom: 27px;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .contact-us {
+
+  }
+}
+/*---------- /contact-us ---------*/

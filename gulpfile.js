@@ -51,6 +51,13 @@ let paths = {
                 'app/js/bright-button.js',
                 'app/js/jquery.main.js'
             ]
+        },
+        {
+            dist: 'circle-button.min.js',
+            contains: [
+                'app/js/circle-button.js',
+                'app/js/jquery.main.js'
+            ]
         }
     ],
     vendorScripts: 'app/js/vendors/**/*.js',
